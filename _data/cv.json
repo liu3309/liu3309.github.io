@@ -1,14 +1,14 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Jiayu Liu",
+    "email": "liu3309@purdue.edu",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://liu3309.github.io",
+    "summary": "Currently a third year PhD student at Purdue University.",
     "location": {
-      "address": "",
+      "address": "1401 Aviation Drive",
       "postalCode": "",
-      "city": "Earth",
+      "city": "West Lafayette, IN",
       "countryCode": "US",
       "region": ""
     },
@@ -16,18 +16,8 @@
       {
         "network": "Google Scholar",
         "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "url": "https://scholar.google.com/citations?user=kJydRusAAAAJ&hl=en"
       },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "http://orcid.org/yourorcidurl"
-      },
-      {
-        "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
-      }
     ]
   },
   "work": [],
