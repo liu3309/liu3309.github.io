@@ -2,8 +2,28 @@
 title: "CV"
 permalink: /cv/
 layout: single
+classes: wide
 ---
-[Download my CV](/assets/CV.pdf)
+
+<style>
+  /* Adjust height as you like */
+  .cv-frame { width: 100%; height: calc(100vh - 220px); border: 1px solid #e5e7eb; }
+  @media (max-width: 800px) { .cv-frame { height: 70vh; } }
+</style>
+
+<object
+  data="{{ '/assets/CV.pdf#zoom=page-width' | relative_url }}"
+  type="application/pdf"
+  class="cv-frame">
+  <!-- Fallback for browsers that block PDF embedding -->
+  <iframe
+    src="{{ '/assets/CV.pdf#zoom=page-width' | relative_url }}"
+    class="cv-frame"></iframe>
+</object>
+
+<p>
+  <a href="{{ '/assets/CV.pdf' | relative_url }}">Download CV (PDF)</a>
+</p>
 
 
 {% include base_path %}
