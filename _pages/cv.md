@@ -17,12 +17,12 @@ classes: wide
   class="cv-frame">
   <!-- Fallback for browsers that block PDF embedding -->
   <iframe
-    src="{{ '/assets/CV.pdf#zoom=page-width' | relative_url }}"
+    src="{{ '/assets/CV_JLiu.pdf#zoom=page-width' | relative_url }}"
     class="cv-frame"></iframe>
 </object>
 
 <p>
-  <a href="{{ '/assets/CV.pdf' | relative_url }}">Download CV (PDF)</a>
+  <a href="{{ '/assets/CV_JLiu.pdf' | relative_url }}">Download CV (PDF)</a>
 </p>
 
 
