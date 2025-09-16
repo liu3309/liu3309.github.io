@@ -5,21 +5,10 @@ layout: single
 classes: wide
 ---
 
-<style>
-  /* Adjust height as you like */
-  .cv-frame { width: 100%; height: calc(100vh - 220px); border: 1px solid #e5e7eb; }
-  @media (max-width: 800px) { .cv-frame { height: 70vh; } }
-</style>
-
-<object
-  data="{{ '/assets/CV.pdf#zoom=page-width' | relative_url }}"
-  type="application/pdf"
-  class="cv-frame">
-  <!-- Fallback for browsers that block PDF embedding -->
-  <iframe
-    src="{{ '/assets/CV_JLiu.pdf#zoom=page-width' | relative_url }}"
-    class="cv-frame"></iframe>
-</object>
+<iframe
+  class="cv-frame"
+  src="https://docs.google.com/gview?embedded=1&url=https://liu3309.github.io/assets/CV_JLiu.docx">
+</iframe>
 
 <p>
   <a href="{{ '/assets/CV_JLiu.pdf' | relative_url }}">Download CV (PDF)</a>
