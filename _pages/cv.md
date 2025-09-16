@@ -21,10 +21,11 @@ classes: wide
     class="cv-frame"></iframe>
 </object>
 
+<!--
 <p>
   <a href="{{ '/assets/CV_JLiu.pdf' | relative_url }}">Download CV (PDF)</a>
 </p>
-
+-->
 
 {% include base_path %}
 
