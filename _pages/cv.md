@@ -7,7 +7,7 @@ classes: wide
 
 <style>
   /* Adjust height as you like */
-  .cv-frame { width: 100%; height: calc(150vh - 180px); border: 1px solid #e5e7eb; }
+  .cv-frame { width: 100%; height: calc(100vh - 180px); border: 1px solid #e5e7eb; }
   @media (max-width: 800px) { .cv-frame { height: 70vh; } }
 </style>
 
