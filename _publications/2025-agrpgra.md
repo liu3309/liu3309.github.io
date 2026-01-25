@@ -7,7 +7,7 @@ category: "Funded Projects"
 venue: "Airport Cooperative Research Program (ACRP) Graduate Research Award, 2025–2026"
 citation: |-
   <br><strong>Mapping Airport Physical Expansion Potential</strong>
+  <br><strong>Sponsor:</strong> ACRP Graduate Research Award, 2025–2026
   <br><strong>Role:</strong> Student PI
-  <br><strong>Sponsor:</strong> ACRP Graduate Research Award, 2025–2026.
 ---
 
