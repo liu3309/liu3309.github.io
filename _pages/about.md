@@ -14,4 +14,4 @@ My recent publications include a study in the *Journal of Air Transport Manageme
 
 I regularly present at venues such as the Air Transport Research Society (ATRS) Conference, the Applied Geography Conference, and Purdue’s GIS Day. At Purdue, I teach **AT 102: Aviation Business** (graduate instructor) and have supported **AT 338: Airline Management** and **AT 546: Aviation Financial Instruments and Operations**. Across research and teaching, I emphasize methodological rigor, transparency, and reproducible analytics that translate into stakeholder-ready insights.
 
-**Interests:** airline reliability; airport accessibility and expansion feasibility; spatial analysis; loyalty programs; aviation education.  
+**Interests:** Aviation Operation; Airport accessibility and expansion feasibility; Loyalty programs; Aviation education.  
