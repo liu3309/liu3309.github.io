@@ -1,12 +1,18 @@
 ---
-layout: archive
 title: "Teaching"
 permalink: /teaching/
+layout: single
+classes: wide
 author_profile: false
 ---
 
-{% include base_path %}
-
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+{% assign courses = site.teaching | sort: "date" | reverse %}
+<ul>
+{% for c in courses %}
+  <li>
+    <strong>{{ c.title }}</strong><br/>
+    {% if c.type %}{{ c.type }}{% endif %}{% if c.venue %} — {{ c.venue }}{% endif %}{% if c.semester %} — {{ c.semester }}{% endif %}
+    {% if c.date %} ({{ c.date | date: "%Y" }}){% endif %}
+  </li>
 {% endfor %}
+</ul>
