@@ -17,14 +17,18 @@ author_profile: true
 {% assign pubs = site.publications | sort: "date" | reverse %}
 <ul>
 {% for pub in pubs %}
-  <li>
-    <strong>{{ pub.title }}</strong><br/>
-    {% if pub.citation %}
-      {{ pub.citation }}
-    {% else %}
-      {% if pub.authors %}{{ pub.authors }}. {% endif %}
-      {% if pub.venue %}{{ pub.venue }}{% endif %}
-    {% endif %}
-  </li>
+  {% assign cite = pub.citation | default: "" %}
+  {% if cite contains "Liu, J." %}
+    {% comment %}
+    Bold "Liu, J." (handle common punctuation variants first, then generic).
+    {% endcomment %}
+    {% assign cite_fmt = cite
+      | replace: "Liu, J.,", "<strong>Liu, J.,</strong>"
+      | replace: "Liu, J.).", "<strong>Liu, J.</strong>)."
+      | replace: "Liu, J.)", "<strong>Liu, J.</strong>)"
+      | replace: "Liu, J.", "<strong>Liu, J.</strong>"
+    %}
+    <li>{{ cite_fmt }}</li>
+  {% endif %}
 {% endfor %}
 </ul>
