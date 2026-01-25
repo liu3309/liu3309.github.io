@@ -6,4 +6,7 @@ permalink: /talks/2024-agc-terminal-landuse
 venue: "Applied Geography Conference, San Marcos, TX"
 date: 2024-10-15
 location: "San Marcos, Texas, USA"
+
+location_lat: 29.8833
+location_lng: -97.9414
 ---
