@@ -6,29 +6,36 @@ classes: wide
 author_profile: false
 ---
 
-{% assign scholar = site.author.googlescholar | default: "" | strip %}
-{% if scholar != "" %}
-  <div class="wordwrap">
-    You can also find my articles on
-    <a href="{{ scholar }}" target="_blank" rel="noopener">Google Scholar</a>.
-  </div>
-{% endif %}
-
 {% assign pubs = site.publications | sort: "date" | reverse %}
-<ul>
-{% for pub in pubs %}
-  {% assign cite = pub.citation | default: "" %}
-  {% if cite contains "Liu, J." %}
-    {% comment %}
-    Bold "Liu, J." (handle common punctuation variants first, then generic).
-    {% endcomment %}
-    {% assign cite_fmt = cite
-      | replace: "Liu, J.,", "<strong>Liu, J.,</strong>"
-      | replace: "Liu, J.).", "<strong>Liu, J.</strong>)."
-      | replace: "Liu, J.)", "<strong>Liu, J.</strong>)"
-      | replace: "Liu, J.", "<strong>Liu, J.</strong>"
-    %}
-    <li>{{ cite_fmt }}</li>
-  {% endif %}
-{% endfor %}
-</ul>
+
+{%- comment -%}
+Define the order and titles of your sections here. Change or reorder freely.
+{%- endcomment -%}
+{% assign buckets = "Aviation Operation|Airport accessibility and expansion feasibility|Passenger Loyalty|Aviation Education" | split: "|" %}
+
+{%- for bucket in buckets -%}
+  {%- assign group = pubs | where: "category", bucket -%}
+  {%- if group.size > 0 -%}
+  <h2>{{ bucket }}</h2>
+  <ul>
+    {%- for pub in group -%}
+      {%- assign cite = pub.citation | default: "" -%}
+      {%- if cite != "" -%}
+        {%- assign cite_fmt = cite
+          | replace: "Liu, J.,", "<strong>Liu, J.,</strong>"
+          | replace: "Liu, J.).", "<strong>Liu, J.</strong>)."
+          | replace: "Liu, J.)", "<strong>Liu, J.</strong>)"
+          | replace: "Liu, J.", "<strong>Liu, J.</strong>"
+        -%}
+        <li>{{ cite_fmt }}</li>
+      {%- else -%}
+        <li>
+          <strong>{{ pub.title }}</strong><br/>
+          {%- if pub.authors %}{{ pub.authors }}. {% endif -%}
+          {%- if pub.venue %}{{ pub.venue }}{% endif -%}
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+  {%- endif -%}
+{%- endfor -%}
