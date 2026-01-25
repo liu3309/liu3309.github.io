@@ -11,7 +11,7 @@ author_profile: true
 {%- comment -%}
 Define the order and titles of your sections here. Change or reorder freely.
 {%- endcomment -%}
-{% assign buckets = "Aviation Operation|Airport accessibility and expansion feasibility|Passenger Loyalty|Aviation Education" | split: "|" %}
+{% assign buckets = "Aviation Operation|Airport Accessibility and Expansion Feasibility|Passenger Loyalty|Aviation Education" | split: "|" %}
 
 {%- for bucket in buckets -%}
   {%- assign group = pubs | where: "category", bucket -%}
