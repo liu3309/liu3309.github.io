@@ -6,10 +6,11 @@ classes: wide
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
+{% assign scholar = site.author.googlescholar | default: "" | strip %}
+{% if scholar != "" %}
   <div class="wordwrap">
     You can also find my articles on
-    <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">my Google Scholar profile</a>.
+    <a href="{{ scholar }}" target="_blank" rel="noopener">my Google Scholar profile</a>.
   </div>
 {% endif %}
 
