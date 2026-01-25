@@ -41,3 +41,11 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+
+/* === Nav alignment overrides === */
+.greedy-nav .visible-links {
+  margin-left: auto;     // pushes tabs to the right
+}
+.greedy-nav .visible-links > li {
+  margin-left: 1rem;     // spacing between tabs
+}
