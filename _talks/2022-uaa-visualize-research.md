@@ -8,6 +8,6 @@ date: 2022-10-01
 location: "Colorado Springs, CO, USA"
 
 location_lat: 38.8353
-location_lng: 104.8216
+location_lng: -104.8216
 
 ---
