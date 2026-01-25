@@ -1,5 +1,4 @@
 ---
-layout: archive
 title: "Research"
 permalink: /research/
 layout: single
@@ -8,10 +7,11 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{https://scholar.google.com/citations?user=kJydRusAAAAJ&hl=en}}">my Google Scholar profile</a>.</div>
+  <div class="wordwrap">
+    You can also find my articles on
+    <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">my Google Scholar profile</a>.
+  </div>
 {% endif %}
-
-{% include base_path %}
 
 {% assign pubs = site.publications | sort: "date" | reverse %}
 <ul>
