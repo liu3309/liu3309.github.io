@@ -44,31 +44,13 @@
 
 /* === Nav alignment overrides === */
 .greedy-nav .visible-links {
-  margin-left: auto;     // pushes tabs to the right
+  margin-left: auto;       /* keeps links on the right */
+  margin-right: 1.25rem;   /* <-- nudge them left from the edge */
 }
 .greedy-nav .visible-links > li {
-  margin-left: 1rem;     // spacing between tabs
+  margin-left: 1rem;       /* spacing between tabs */
 }
-.masthead .site-title { 
+.masthead .site-title,
+.masthead .site-title a {
   display: none !important;
 }
-.masthead__inner-wrap,
-.page {
-  max-width: 1200px;   /* adjust if you want narrower/wider */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Use the same horizontal padding as the masthead (tabs area) */
-.masthead__inner-wrap { padding-left: 20px; padding-right: 20px; }
-.page__inner-wrap     { padding-left: 20px; padding-right: 20px; }
-
-/* Remove extra inner padding some layouts add */
-.layout--single .page__content {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* when the author sidebar is shown on the About page,
-   keep the main column tight so the left/right edges still align */
-.sidebar { margin-left: 0; }
