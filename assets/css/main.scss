@@ -42,15 +42,3 @@
     "vendor/font-awesome/brands"
 ;
 
-/* === Nav alignment overrides === */
-.greedy-nav .visible-links {
-  margin-left: auto;       /* keeps links on the right */
-  margin-right: 1.25rem;   /* <-- nudge them left from the edge */
-}
-.greedy-nav .visible-links > li {
-  margin-left: 1rem;       /* spacing between tabs */
-}
-.masthead .site-title,
-.masthead .site-title a {
-  display: none !important;
-}
