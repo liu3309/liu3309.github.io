@@ -52,3 +52,23 @@
 .masthead .site-title { 
   display: none !important;
 }
+.masthead__inner-wrap,
+.page {
+  max-width: 1200px;   /* adjust if you want narrower/wider */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Use the same horizontal padding as the masthead (tabs area) */
+.masthead__inner-wrap { padding-left: 20px; padding-right: 20px; }
+.page__inner-wrap     { padding-left: 20px; padding-right: 20px; }
+
+/* Remove extra inner padding some layouts add */
+.layout--single .page__content {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Optional: when the author sidebar is shown on the About page,
+   keep the main column tight so the left/right edges still align */
+.sidebar { margin-left: 0; }
