@@ -1,5 +1,4 @@
 ---
----
 title: "Mapping Airport Physical Expansion Potential"
 collection: publications
 permalink: /publication/funded-expansion-potential
