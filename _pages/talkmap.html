@@ -1,9 +1,52 @@
 ---
-layout: archive
-title: "Talk map"
+layout: page
+title: "Talk Map"
 permalink: /talkmap.html
-author_profile: true
 ---
 
-<p>This map is generated from a Jupyter Notebook file in <a href="https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb">talkmap.ipynb</a>, which mines the location fields in the .md files in _talks/.</p>
-<iframe src="/talkmap/map.html" height="700" width="850" style="border:none;"></iframe>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-sA+4wTkfQbG2f9Q3g3VwaS2bptI6R4EOfk5Z9wZ8J3s=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-o9N1j7kGStb7LEbK1JrV5q6m0uZQ64z36N58Z2A6bDU=" crossorigin=""></script>
+
+<div id="talkmap" style="height: 70vh; width: 100%; border: 1px solid #eee;"></div>
+
+<script>
+// Gather talks with coordinates
+var talks = [
+  {% for t in site.talks %}
+    {% if t.location_lat and t.location_lng %}
+      {
+        "title": {{ t.title | jsonify }},
+        "venue": {{ t.venue | default: "" | jsonify }},
+        "location": {{ t.location | default: "" | jsonify }},
+        "date": {{ t.date | date: "%Y-%m-%d" | jsonify }},
+        "lat": {{ t.location_lat }},
+        "lng": {{ t.location_lng }}
+      }{% unless forloop.last %},{% endunless %}
+    {% endif %}
+  {% endfor %}
+];
+
+// Init map
+var map = L.map('talkmap');
+var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19, attribution: '&copy; OpenStreetMap'
+}).addTo(map);
+
+var bounds = [];
+talks.forEach(function(d){
+  var popup = "<strong>" + d.title + "</strong>"
+            + (d.venue ? "<br/>" + d.venue : "")
+            + (d.location ? "<br/>" + d.location : "")
+            + (d.date ? "<br/>" + d.date : "");
+  var m = L.marker([d.lat, d.lng]).addTo(map).bindPopup(popup);
+  bounds.push([d.lat, d.lng]);
+});
+
+if (bounds.length > 0) {
+  map.fitBounds(bounds, {padding: [20, 20]});
+} else {
+  map.setView([20, 0], 2); // fallback
+}
+</script>
