@@ -5,8 +5,7 @@ permalink: /publication/funded-expansion-potential
 date: 2025-08-01
 category: "Funded Projects"
 venue: "Airport Cooperative Research Program (ACRP) Graduate Research Award, 2025–2026"
-citation: |-
-  <strong>Mapping Expansion Potential: A Spatial Survey and Land Categorization Analysis for U.S. Airports</strong>
+citation: |- <strong>Mapping Expansion Potential: A Spatial Survey and Land Categorization Analysis for U.S. Airports</strong>
   <br><strong>Sponsor:</strong> ACRP Graduate Research Award, 2025–2026
   <br><strong>Role:</strong> Student PI
 ---
