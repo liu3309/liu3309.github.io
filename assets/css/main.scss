@@ -483,15 +483,17 @@
 
 .about-profile__divider {
   width: 100%;
-  height: 2px;
+  height: 3px;
   margin: 3rem 0;
   border: 0;
   background: linear-gradient(
-      to right,
-      transparent,
-      var(--global-link-color),
-      transparent
+    to right,
+    rgba(42, 122, 185, 0.35),
+    #2a7ab9 20%,
+    #2a7ab9 80%,
+    rgba(42, 122, 185, 0.35)
   );
+  border-radius: 3px;
 }
 
 
@@ -768,15 +770,17 @@ body #main {
 
 .research-project__divider {
   width: 100%;
-  height: 2px;
+  height: 3px;
   margin: 3rem 0;
   border: 0;
   background: linear-gradient(
-      to right,
-      transparent,
-      var(--global-link-color),
-      transparent
+    to right,
+    rgba(42, 122, 185, 0.35),
+    #2a7ab9 20%,
+    #2a7ab9 80%,
+    rgba(42, 122, 185, 0.35)
   );
+  border-radius: 3px;
 }
 
 /* Published report cover */
