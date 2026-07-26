@@ -496,6 +496,19 @@
   border-radius: 3px;
 }
 
+.section-divider--compact {
+  width: 100%;
+  height: 3px;
+  margin: 0.5rem 0 1rem;
+  border: 0;
+  background: linear-gradient(
+      to right,
+      #8bb8e8,
+      #2a7ab9,
+      #8bb8e8
+  );
+  border-radius: 3px;
+}
 
 /* Mobile profile layout */
 
