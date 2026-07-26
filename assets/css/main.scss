@@ -79,6 +79,11 @@
   color: var(--global-masthead-link-color-hover);
 }
 
+.left-nav hr,
+.sidebar-divider {
+    border: 0;
+    border-top: 2px solid #2a7ab9;
+}
 
 /* ==========================================================================
    DESKTOP LAYOUT
