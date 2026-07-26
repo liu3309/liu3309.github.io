@@ -1474,10 +1474,15 @@ body {
 }
 
 /* Wider than the text column but still centered */
+// .research-project__embed {
+//     width: 120%;
+//     margin: 2rem 0 2rem -10%;
+//     overflow: hidden;
+// }
+
 .research-project__embed {
-    width: 120%;
-    margin: 2rem 0 2rem -10%;
-    overflow: hidden;
+    width: min(1200px, 120%);
+    margin: 2rem auto;
 }
 
 /* ArcGIS iframe */
