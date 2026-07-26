@@ -489,7 +489,7 @@
   background: linear-gradient(
       to right,
       transparent,
-      #2a7ab9,
+      var(--global-link-color),
       transparent
   );
 }
@@ -774,7 +774,7 @@ body #main {
   background: linear-gradient(
       to right,
       transparent,
-      #2a7ab9,
+      var(--global-link-color),
       transparent
   );
 }
