@@ -98,36 +98,50 @@ Beyond research, I serve as the Graduate Course Instructor for AT 102 - Aviation
 
 <div class="cv-section">
 
-  <h3 style="margin-top: 0;">Reviewer</h3>
+  <h3>Reviewer</h3>
 
   <div class="cv-row">
-    <span>Journal of Air Transport Management (JATM)</span>
-    <span>Reliability Engineering & System Safety (RESS)</span>
+    - Journal of Air Transport Management (JATM)
   </div>
 
   <div class="cv-row">
-    <span>Journal of Transport Geography (JTG)</span>
-    <span>Collegiate Aviation Review–International (CAR-i)</span>
+    - Reliability Engineering & System Safety (RESS)
   </div>
 
   <div class="cv-row">
-    <span>American Journal of Aerospace Engineering (AJAE)</span>
-    <span>International Journal of Aviation, Aeronautics, and Aerospace (IJAAA)</span>
-  </div>
-
-  <div style="height: 1.5rem;"></div>
-
-  <h3 style="margin-top: 0;">Professional Affiliation</h3>
-
-  <div class="cv-row">
-    <span>American Association of Airport Executives (AAAE)</span>
-    <span>Air Transport Research Society (ATRS)</span>
+    - Journal of Transport Geography (JTG)
   </div>
 
   <div class="cv-row">
-    <span>American Association of Geographers (AAG)</span>
-    <span>University Aviation Association (UAA)</span>
+    - Collegiate Aviation Review–International (CAR-i)
+  </div>
+
+  <div class="cv-row">
+    - American Journal of Aerospace Engineering (AJAE)
+  </div>
+
+  <div class="cv-row">
+    - International Journal of Aviation, Aeronautics, and Aerospace (IJAAA)
+  </div>
+
+  <div style="height: 1.2rem;"></div>
+
+  <h3>Professional Affiliation</h3>
+
+  <div class="cv-row">
+    - American Association of Airport Executives (AAAE)
+  </div>
+
+  <div class="cv-row">
+    - Air Transport Research Society (ATRS)
+  </div>
+
+  <div class="cv-row">
+    - American Association of Geographers (AAG)
+  </div>
+
+  <div class="cv-row">
+    - University Aviation Association (UAA)
   </div>
 
 </div>
-
