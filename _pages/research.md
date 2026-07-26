@@ -14,7 +14,7 @@ author_profile: false
 
 <section id="sponsored-projects" class="research-section">
 
-
+<hr class="section-divider--compact">
 <div style="height: 2rem;"></div>
 <h2>Sponsored Project</h2>
 
@@ -42,8 +42,6 @@ This project develops a national framework to assess the necessity and spatial f
 
 
 
-
-<hr class="research-project__divider">
 
 <div class="research-project__row">
 
@@ -90,7 +88,7 @@ This project develops a national framework to assess the necessity and spatial f
 
 
 
-
+<hr class="section-divider--compact">
 </section>
 <section id="publications" class="research-section">
 <div style="height: 2.6rem;"></div>
@@ -174,7 +172,7 @@ Gao, Y., &amp; <strong>Liu, J.</strong> (2023). <em>State of Airport Loyalty Pro
 
 
 
-
+<hr class="section-divider--compact">
 <section id="conference-activities" class="research-section">
 <div style="height: 2.6rem;"></div>
 <h2>Conference Activities</h2>
