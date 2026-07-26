@@ -12,11 +12,10 @@ author_profile: false
 
 <section id="sponsored-projects" class="research-section">
 
-<section id="sponsored-projects" class="research-section">
 
 <hr class="section-divider--compact">
 <div style="height: 2rem;"></div>
-<h2>Sponsored Project</h2>
+<h2 id="sponsored-projects">Sponsored Projects</h2>
 
 <h3>Airport Cooperative Research Project 11-04: Mapping Airport Expansion Potential</h3>
 
@@ -91,7 +90,7 @@ This project develops a national framework to assess the necessity and spatial f
 <hr class="section-divider--compact">
 </section>
 <section id="publications" class="research-section">
-<h2>Publications</h2>
+<h2 id="publications">Publications</h2>
 
 <div class="research-list">
 
@@ -174,7 +173,7 @@ Gao, Y., &amp; <strong>Liu, J.</strong> (2023). <em>State of Airport Loyalty Pro
 <hr class="section-divider--compact">
 <section id="conference-activities" class="research-section">
 <div style="height: 2.6rem;"></div>
-<h2>Conference Activities</h2>
+<h2 id="conference-activities">Conference Activities</h2>
 
 
 <h3>2025</h3>
