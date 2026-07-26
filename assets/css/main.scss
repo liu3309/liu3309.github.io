@@ -483,12 +483,15 @@
 
 .about-profile__divider {
   width: 100%;
-
-  margin: 0 0 1.75rem;
-  padding: 0;
-
+  height: 2px;
+  margin: 3rem 0;
   border: 0;
-  border-top: 1px solid var(--global-border-color);
+  background: linear-gradient(
+      to right,
+      transparent,
+      #2a7ab9,
+      transparent
+  );
 }
 
 
@@ -764,9 +767,16 @@ body #main {
 /* Separation between sponsored projects */
 
 .research-project__divider {
+  width: 100%;
+  height: 2px;
   margin: 3rem 0;
   border: 0;
-  border-top: 1px solid var(--global-border-color);
+  background: linear-gradient(
+      to right,
+      transparent,
+      #2a7ab9,
+      transparent
+  );
 }
 
 /* Published report cover */
