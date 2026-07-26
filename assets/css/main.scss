@@ -115,7 +115,7 @@
     padding: 0 !important;
 
     background: var(--global-bg-color) !important;
-    border-right: 1px solid var(--global-border-color) !important;
+    border-right: 2px solid var(--global-border-color) !important;
     border-bottom: 0 !important;
 
     overflow-x: hidden !important;
@@ -932,7 +932,7 @@ body {
 
     background: var(--global-bg-color) !important;
 
-    border-right: 1px solid var(--global-border-color) !important;
+    border-right: 2px solid var(--global-border-color) !important;
     border-bottom: 0 !important;
 
     overflow-x: hidden !important;
@@ -1542,3 +1542,15 @@ body {
   border-top: 2px solid #1f4e79 !important;
   opacity: 1 !important;
 }
+
+
+.about-profile__name {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+.about-profile__name::after {
+    display: none !important;
+}
+
+
