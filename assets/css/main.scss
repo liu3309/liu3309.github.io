@@ -258,13 +258,25 @@
   .page__content {
     margin-top: 0 !important;
   }
-  .page__content h2 {
+.page__content h2 {
+  position: relative;
   margin-top: 1.75em;
-  margin-bottom: 0.6em;
-  padding-bottom: 0.4em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
   font-size: 1.1em;
   font-weight: 700;
-  border-bottom: 1px solid var(--global-border-color);
+  border-bottom: 1px solid #d5dce5;
+}
+
+.page__content h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 80px;
+  height: 3px;
+  background: #2a7ab9;
+  border-radius: 2px;
 }
 
 .page__content h3 {
@@ -484,35 +496,6 @@
 .about-profile__links a:hover {
   color: var(--global-link-color-hover);
   text-decoration: underline;
-}
-
-.about-profile__divider {
-  width: 90%;
-  height: 3px;
-  margin: 3rem 0;
-  border: 0;
-  background: linear-gradient(
-    to right,
-    rgba(42, 122, 185, 0.35),
-    #2a7ab9 20%,
-    #2a7ab9 80%,
-    rgba(42, 122, 185, 0.35)
-  );
-  border-radius: 3px;
-}
-
-.section-divider--compact {
-  width: 90%;
-  height: 3px;
-  margin: 0.5rem 0 1rem;
-  border: 0;
-  background: linear-gradient(
-      to right,
-      #8bb8e8,
-      #2a7ab9,
-      #8bb8e8
-  );
-  border-radius: 3px;
 }
 
 /* Mobile profile layout */
