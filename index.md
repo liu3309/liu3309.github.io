@@ -18,7 +18,7 @@ Beyond research, I serve as the Graduate Course Instructor for AT 102 - Aviation
 
 
 
-
+<hr class="section-divider--compact">
 <div style="height: 2.6rem;"></div>
 <h2>Education</h2>
 
@@ -72,7 +72,7 @@ Beyond research, I serve as the Graduate Course Instructor for AT 102 - Aviation
 
 
 
-
+<hr class="section-divider--compact">
 <div style="height: 2.6rem;"></div>
 <h2>Certification & License</h2>
 
@@ -92,7 +92,7 @@ Beyond research, I serve as the Graduate Course Instructor for AT 102 - Aviation
 
 
 
-
+<hr class="section-divider--compact">
 <div style="height: 2.6rem;"></div>
 <h2>Professional Service & Activities</h2>
 
