@@ -1,0 +1,1501 @@
+---
+---
+
+/*
+ * This file controls what is imported from /_sass.
+ *
+ * The files are processed in the order they are imported.
+ * The first two lines are required by Jekyll.
+ */
+
+@import
+    "vendor/breakpoint/breakpoint",
+
+    "themes",
+    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
+    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
+
+    "include/mixins",
+    "vendor/susy/susy",
+
+    "layout/reset",
+    "layout/base",
+
+    "include/utilities",
+    "layout/tables",
+    "layout/buttons",
+    "layout/notices",
+    "layout/masthead",
+    "layout/navigation",
+    "layout/footer",
+    "syntax",
+
+    "layout/forms",
+
+    "layout/page",
+    "layout/archive",
+    "layout/sidebar",
+
+    "vendor/font-awesome/fontawesome",
+    "vendor/font-awesome/solid",
+    "vendor/font-awesome/brands"
+;
+
+
+/* ==========================================================================
+   CUSTOM LEFT NAVIGATION
+   ========================================================================== */
+
+/* Shared navigation styles */
+
+.left-nav,
+.left-nav__list,
+.left-nav__sublist {
+  width: 100%;
+}
+
+.left-nav__list,
+.left-nav__sublist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.left-nav__item,
+.left-nav__subitem {
+  margin: 0;
+  padding: 0;
+}
+
+.left-nav__item > a,
+.left-nav__section-title,
+.left-nav__subitem > a {
+  color: var(--global-masthead-link-color);
+  text-decoration: none;
+}
+
+.left-nav__item > a:hover,
+.left-nav__subitem > a:hover {
+  color: var(--global-masthead-link-color-hover);
+}
+
+
+/* ==========================================================================
+   DESKTOP LAYOUT
+   ========================================================================== */
+
+@media screen and (min-width: 1200px) {
+
+  /* Fixed navigation panel on the left */
+
+  .masthead {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+
+    // width: 220px !important;
+    height: 100vh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: var(--global-bg-color) !important;
+    border-right: 1px solid var(--global-border-color) !important;
+    border-bottom: 0 !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    z-index: 1000 !important;
+  }
+
+  .masthead__inner-wrap {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 100% !important;
+
+    margin: 0 !important;
+    padding: 6rem 1.5rem 2rem !important;
+  }
+
+  .left-nav {
+    display: block;
+    // width: 230px;
+    // top: 5rem; 
+    margin-top: 13rem;
+  }
+
+  /* Main navigation items */
+
+  .left-nav__item {
+    display: block;
+    width: 100%;
+  }
+
+  .left-nav__item > a,
+  .left-nav__section-title {
+    display: block;
+    width: 100%;
+
+    margin: 0;
+    padding: 0.6rem 0;
+
+    line-height: 1.35;
+  }
+
+  /* Website title */
+
+  .left-nav__item--title {
+    margin-bottom: 0.75rem;
+  }
+
+.left-nav__item--title > a {
+  font-weight: 400;
+}
+
+.left-nav__item--title > a.active {
+  font-weight: 700;
+}
+
+  /* Section heading, such as Research */
+
+  .left-nav__item--section {
+    margin: 0;
+  }
+
+  .left-nav__section-title {
+    font-weight: 400;
+    cursor: default;
+  }
+
+  /* Permanently visible indented subtabs */
+
+  .left-nav__sublist {
+    margin: 0 0 0.6rem;
+    padding-left: 1rem;
+  }
+
+  .left-nav__subitem {
+    display: block;
+    width: 100%;
+  }
+
+  .left-nav__subitem > a {
+    display: block;
+    width: 100%;
+
+    padding: 0.35rem 0;
+
+    font-size: 0.9em;
+    line-height: 1.35;
+    opacity: 0.85;
+  }
+
+  .left-nav__subitem > a:hover {
+    opacity: 1;
+  }
+
+  /* Theme toggle */
+
+  .left-nav__item--theme {
+    margin-top: 0.75rem;
+  }
+
+  .theme-toggle-button,
+  #theme-toggle > a,
+  #theme-toggle > button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0.6rem 0;
+
+    color: var(--global-masthead-link-color);
+    font: inherit;
+    text-decoration: none;
+
+    background: transparent;
+    border: 0;
+
+    cursor: pointer;
+  }
+
+  .theme-toggle-button:hover,
+  #theme-toggle > a:hover,
+  #theme-toggle > button:hover {
+    color: var(--global-masthead-link-color-hover);
+  }
+
+  /* Remove space formerly reserved for the top masthead */
+
+  body {
+    padding-top: 0 !important;
+  }
+
+  // .initial-content {
+  //   margin-top: 0 !important;
+  //   padding-top: 0 !important;
+  // }
+
+  // #main {
+  //   margin-top: 0 !important;
+  //   padding-top: 1rem !important;
+  // }
+
+  .page,
+  .page__inner-wrap {
+  max-width: 1500px;
+}
+  .page__content {
+    margin-top: 0 !important;
+  }
+  .page__content h2 {
+  margin-top: 1.75em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.4em;
+  font-size: 1.1em;
+  font-weight: 700;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.page__content h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 660;
+  color: var(--global-text-color);
+}
+}
+
+
+/* ==========================================================================
+   TABLET AND MOBILE NAVIGATION
+   ========================================================================== */
+
+@media screen and (max-width: 1199px) {
+
+  /*
+   * On smaller screens, restore the masthead to the top of the page.
+   * All links remain visible because the old Greedy Navigation system
+   * has been removed.
+   */
+
+  .masthead {
+    position: relative !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: var(--global-bg-color);
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--global-border-color);
+
+    overflow: visible !important;
+  }
+
+  .masthead__inner-wrap {
+    width: 100%;
+    max-width: none;
+
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+  }
+
+  .left-nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 0.25rem 1rem;
+  }
+
+  .left-nav__item {
+    width: auto;
+  }
+
+  .left-nav__item > a,
+  .left-nav__section-title {
+    display: block;
+    padding: 0.45rem 0;
+  }
+
+  .left-nav__item--title {
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+
+.left-nav__item--title > a {
+  font-weight: 400;
+}
+
+.left-nav__item--title > a.active {
+  font-weight: 700;
+}
+
+  /*
+   * Keep Research and its subtabs grouped together on a separate row.
+   */
+
+  .left-nav__item--section {
+    width: 100%;
+  }
+
+  .left-nav__section-title {
+    font-weight: 400;
+  }
+
+  .left-nav__sublist {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.25rem 1rem;
+
+    margin: 0;
+    padding-left: 1rem;
+  }
+
+  .left-nav__subitem > a {
+    display: block;
+
+    padding: 0.3rem 0;
+
+    font-size: 0.9em;
+    opacity: 0.85;
+  }
+
+  .left-nav__subitem > a:hover {
+    opacity: 1;
+  }
+
+  .left-nav__item--theme {
+    margin-left: auto;
+  }
+
+  .theme-toggle-button,
+  #theme-toggle > a,
+  #theme-toggle > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0.45rem;
+
+    color: var(--global-masthead-link-color);
+    font: inherit;
+
+    background: transparent;
+    border: 0;
+
+    cursor: pointer;
+  }
+
+  body,
+  .initial-content,
+  #main {
+    margin-top: 0 !important;
+  }
+}
+
+
+
+/* ==========================================================================
+   ABOUT PAGE PROFILE
+   ========================================================================== */
+
+.about-profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  width: 100%;
+  margin: 1.5rem 0 1.5rem;
+  padding: 0;
+}
+
+.about-profile__photo {
+  flex: 0 0 170px;
+}
+
+.about-profile__photo img {
+  display: block;
+
+  width: 170px;
+  height: 170px;
+
+  margin: 0;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-profile__details {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-profile__name {
+  margin: 0 0 0.4rem !important;
+  padding: 0 !important;
+
+  border-bottom: 0 !important;
+  font-size: 1.2em !important;
+}
+
+.about-profile__bio {
+  margin: 0 0 0.8rem;
+}
+
+.about-profile__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.about-profile__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  font-size: 0.85em;
+
+  color: var(--global-link-color);
+  text-decoration: none;
+}
+
+.about-profile__links a:hover {
+  color: var(--global-link-color-hover);
+  text-decoration: underline;
+}
+
+.about-profile__divider {
+  width: 100%;
+
+  margin: 0 0 1.75rem;
+  padding: 0;
+
+  border: 0;
+  border-top: 1px solid var(--global-border-color);
+}
+
+
+/* Mobile profile layout */
+
+@media screen and (max-width: 700px) {
+
+  .about-profile {
+    display: block;
+  }
+
+  .about-profile__photo {
+    margin-bottom: 1rem;
+  }
+
+  .about-profile__photo img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .about-profile__links {
+    display: block;
+  }
+
+  .about-profile__links a {
+    display: flex;
+    width: fit-content;
+    margin-bottom: 0.45rem;
+  }
+}
+
+
+
+
+/* Force more space above all page content */
+body .initial-content {
+  padding-top: 5rem !important;
+}
+
+body #main {
+  margin-top: 5rem !important;
+}
+
+
+
+
+/* ==========================================================================
+   FOOTER ALIGNMENT WITH FIXED LEFT NAVIGATION
+   ========================================================================== */
+
+// @media screen and (min-width: 1200px) {
+
+//   .page__footer {
+//     margin-left: 225px;
+//     width: calc(100% - 225px);
+//   }
+
+//   .page__footer-follow,
+//   .page__footer-copyright {
+//     max-width: 100%;
+//     margin-left: auto;
+//     margin-right: auto;
+//     padding-left: 1.5rem;
+//     padding-right: 1.5rem;
+//   }
+// }
+
+
+
+
+
+/* ==========================================================================
+   EDUCATION
+   ========================================================================== */
+
+.about-profile__bio h4 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+
+  font-size: 1rem;
+}
+
+.education-item {
+  margin-bottom: 1rem;
+}
+
+.education-item .location {
+  color: #777;
+  font-size: 0.85em;
+}
+
+.education-item ul {
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+  padding-left: 1.2rem;
+}
+
+.education-item li {
+  margin-bottom: 0.45rem;
+  font-size: 0.9em;
+}
+
+.education-item .year {
+  float: right;
+  color: #666;
+  font-weight: normal;
+}
+
+.dissertation {
+  list-style: none;
+  margin-left: -1.2rem;
+  font-size: 0.85em !important;
+  color: #555;
+}
+
+
+/* ==========================================================================
+   ACTIVE NAVIGATION
+   ========================================================================== */
+
+.left-nav a.active,
+.left-nav .active > a,
+.left-nav .current > a,
+.left-nav .is-active > a,
+.left-nav .active {
+  font-weight: 700 !important;
+}
+
+
+/* ==========================================================================
+   RESEARCH PAGE ANCHOR NAVIGATION
+   ========================================================================== */
+
+.research-section {
+  scroll-margin-top: 5rem;
+}
+
+.research-section + .research-section {
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--global-border-color);
+}
+
+.left-nav__section-title {
+  cursor: pointer;
+}
+
+
+
+/* ==========================================================================
+   CV-STYLE SECTIONS
+   ========================================================================== */
+
+.cv-section {
+  margin-top: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.cv-institution {
+  margin-bottom: 0rem;
+}
+
+.cv-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 2rem;
+
+  margin-bottom: 0.35rem;
+
+  font-size: 0.9em;          /* Same size as page text */
+  line-height: 1.4;
+}
+
+.cv-row > span:last-child {
+  white-space: nowrap;
+  text-align: right;
+  font-size: inherit;
+}
+
+.cv-row--institution {
+  margin-bottom: 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cv-school {
+    margin-top: 0rem;
+    margin-bottom: 0;
+}
+
+.page__content h3.cv-school {
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+}
+
+.cv-location {
+  white-space: nowrap;
+}
+
+.cv-row--institution span:first-child {
+  font-size: 1.0em;
+  font-weight: 700;
+}
+
+.cv-row--institution span:last-child {
+  color: #666;
+}
+
+.cv-detail {
+  margin: 0 0 0.35rem 1.5rem;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+.cv-dissertation {
+  margin-bottom: 0.75rem;
+}
+
+/* ===== Research Page ===== */
+.research-project {
+  margin: 1.5rem 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.research-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.55rem;
+}
+
+.research-project__meta {
+  margin-bottom: 0.9rem;
+}
+
+.research-list {
+  margin-top: 1rem;
+}
+
+.research-entry {
+  margin: 0 0 1.05rem;
+  line-height: 1.55;
+}
+
+.research-section h3 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+
+
+/* ==========================================================================
+   RESEARCH PAGE HEADINGS
+   ========================================================================== */
+
+.research-section h2 {
+  /* Keep current H2 appearance */
+}
+
+.research-section h3 {
+  font-size: 0.95rem;
+  font-weight: 660;
+  margin-top: 1.75rem;
+  margin-bottom: 0.6rem;
+  color: var(--global-text-color);
+}
+
+
+
+
+/* Separation between sponsored projects */
+
+.research-project__divider {
+  margin: 3rem 0;
+  border: 0;
+  border-top: 1px solid var(--global-border-color);
+}
+
+/* Published report cover */
+
+.research-project__publication {
+  margin: 1.5rem 0 0.75rem;
+}
+
+.research-project__publication img {
+  display: block;
+  width: 80%;
+  max-width: 320px;
+  height: auto;
+  border: 1px solid var(--global-border-color);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.research-project__publication a {
+  display: inline-block;
+}
+
+
+/* Two-column sponsored project layout */
+
+.research-project__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.research-project__cover {
+  flex: 0 0 180px;
+  margin-top: 2rem;
+}
+
+.research-project__cover img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0,0,0,.12);
+}
+
+.research-project__details {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .research-project__row {
+    flex-direction: column;
+  }
+
+  .research-project__cover {
+    width: 220px;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   RESPONSIVE SIDEBAR, MAIN CONTENT, EMBED, AND FOOTER
+   ========================================================================== */
+
+:root {
+  /* Responsive desktop sidebar width */
+  --sidebar-width: clamp(210px, 16vw, 250px);
+
+  /* Responsive left and right spacing for the main page */
+  --content-gap: clamp(14rem, 14vw, 6rem);
+
+  /* Tablet spacing */
+  --tablet-gap: clamp(1.5rem, 5vw, 3rem);
+
+  /* Mobile spacing */
+  --mobile-gap: 1.25rem;
+
+  --global-bg-color: #fafaf8;
+  // --global-footer-bg-color: #fafaf8;
+}
+
+
+/* Prevent width calculations from creating horizontal overflow */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* Use predictable width calculations */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* Hide Sitemap and other footer navigation links */
+
+.page__footer-follow,
+.page__footer a[href*="sitemap"] {
+  display: none !important;
+}
+
+
+/* ==========================================================================
+   DESKTOP
+   ========================================================================== */
+
+@media screen and (min-width: 1200px) {
+
+  /* --------------------------------------------------------------------------
+     Fixed left sidebar
+     -------------------------------------------------------------------------- */
+
+  .masthead {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: var(--sidebar-width) !important;
+    min-width: var(--sidebar-width) !important;
+    max-width: var(--sidebar-width) !important;
+
+    height: 100vh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: var(--global-bg-color) !important;
+
+    border-right: 1px solid var(--global-border-color) !important;
+    border-bottom: 0 !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    z-index: 1000 !important;
+  }
+
+
+  /* Inner sidebar container */
+
+  .masthead__inner-wrap {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    min-height: 100% !important;
+
+    margin: 0 !important;
+    padding: 5rem 1.25rem 1.25rem !important;
+  }
+
+
+  /* Navigation fills the sidebar */
+
+  .left-nav {
+    position: static !important;
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* --------------------------------------------------------------------------
+     Outer page container
+     -------------------------------------------------------------------------- */
+
+  .initial-content {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
+  /* --------------------------------------------------------------------------
+     Main page content
+     -------------------------------------------------------------------------- */
+
+  #main {
+    display: block !important;
+    float: none !important;
+
+    /*
+     * The left margin reserves space for the sidebar.
+     * Width auto fills the remaining browser space.
+     */
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: var(--sidebar-width) !important;
+    margin-right: 0 !important;
+
+    padding-left: var(--content-gap) !important;
+    padding-right: var(--content-gap) !important;
+  }
+
+
+  /* Remove theme width restrictions */
+
+  .page {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+
+  .page__inner-wrap {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+
+  .page__content {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
+  /* --------------------------------------------------------------------------
+     Full-width footer beside sidebar
+     -------------------------------------------------------------------------- */
+
+  .page__footer {
+    position: relative !important;
+    display: block !important;
+
+    float: none !important;
+    clear: both !important;
+
+    /*
+     * Use viewport width here rather than the footer parent's width.
+     * This prevents the footer from shrinking to its text.
+     */
+
+    left: var(--sidebar-width) !important;
+
+    width: calc(100vw - var(--sidebar-width)) !important;
+    min-width: calc(100vw - var(--sidebar-width)) !important;
+    max-width: calc(100vw - var(--sidebar-width)) !important;
+
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+
+    padding: 0 !important;
+
+    background: var(--global-footer-bg-color) !important;
+  }
+
+
+  /* Remove the theme's centered footer width */
+
+  .page__footer footer {
+    position: static !important;
+    display: block !important;
+
+    float: none !important;
+    clear: both !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding-top: 0 !important;
+    padding-right: var(--content-gap) !important;
+    padding-bottom: 0 !important;
+    padding-left: var(--content-gap) !important;
+  }
+
+
+  /* Copyright line */
+
+  .page__footer-copyright {
+    position: static !important;
+    display: block !important;
+
+    float: none !important;
+    clear: both !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 1.5rem 0 !important;
+
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+
+    text-align: left !important;
+  }
+}
+
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media screen and (min-width: 701px) and (max-width: 1199px) {
+
+  /* Return sidebar to normal top navigation */
+
+  .masthead {
+    position: relative !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--global-border-color) !important;
+
+    overflow: visible !important;
+  }
+
+
+  .masthead__inner-wrap {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 1rem 0.75rem 1rem !important;
+  }
+
+
+  .left-nav {
+    position: static !important;
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  .initial-content {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
+  #main {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: var(--tablet-gap) !important;
+    padding-right: var(--tablet-gap) !important;
+  }
+
+
+  .page,
+  .page__inner-wrap,
+  .page__content {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Tablet footer */
+
+  .page__footer {
+    position: relative !important;
+    display: block !important;
+
+    float: none !important;
+    clear: both !important;
+
+    left: 0 !important;
+
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: var(--global-footer-bg-color) !important;
+  }
+
+
+  .page__footer footer {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding-left: var(--tablet-gap) !important;
+    padding-right: var(--tablet-gap) !important;
+  }
+
+
+  .page__footer-copyright {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 1.5rem 0 !important;
+
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+
+    text-align: left !important;
+  }
+}
+
+
+/* ==========================================================================
+   SMALL MOBILE
+   ========================================================================== */
+
+@media screen and (max-width: 700px) {
+
+  .masthead {
+    position: relative !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--global-border-color) !important;
+
+    overflow: visible !important;
+  }
+
+
+  .masthead__inner-wrap {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 1rem 0.75rem 1rem !important;
+  }
+
+
+  .left-nav {
+    position: static !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  .initial-content {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
+  #main {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: var(--mobile-gap) !important;
+    padding-right: var(--mobile-gap) !important;
+  }
+
+
+  .page,
+  .page__inner-wrap,
+  .page__content {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Mobile footer */
+
+  .page__footer {
+    position: relative !important;
+    display: block !important;
+
+    float: none !important;
+    clear: both !important;
+
+    left: 0 !important;
+
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: var(--global-footer-bg-color) !important;
+  }
+
+
+  .page__footer footer {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding-left: var(--mobile-gap) !important;
+    padding-right: var(--mobile-gap) !important;
+  }
+
+
+  .page__footer-copyright {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 1.25rem 0 !important;
+
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+
+    text-align: left !important;
+  }
+}
+/* ==========================================================================
+   STICKY FOOTER
+   ========================================================================== */
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main site wrapper grows */
+.initial-content {
+    flex: 1;
+}
+
+/* Remove extra bottom spacing */
+#main,
+.page,
+.page__inner-wrap,
+.page__content {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Footer stays after content */
+.page__footer {
+    margin-top: auto !important;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   EMBEDDED RESEARCH WEBSITE
+   ========================================================================== */
+
+.research-project {
+    max-width: none;
+}
+
+/* Wider than the text column but still centered */
+.research-project__embed {
+    width: 120%;
+    margin: 2rem 0 2rem -10%;
+    overflow: hidden;
+}
+
+/* ArcGIS iframe */
+.research-project__embed iframe {
+    display: block;
+    width: 100%;
+    height: 750px;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* Project link */
+.research-project__link {
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+    .research-project__embed {
+        width: 100%;
+        margin: 2rem 0;
+    }
+
+    .research-project__embed iframe {
+        height: 550px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .research-project__embed iframe {
+        height: 450px;
+    }
+}
+

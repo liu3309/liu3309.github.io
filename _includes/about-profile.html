@@ -1,0 +1,69 @@
+{% include base_path %}
+
+<div class="about-profile">
+
+  <div class="about-profile__photo">
+    <img
+      src="{{ base_path }}/images/{{ site.author.avatar }}"
+      alt="{{ site.author.name | default: site.title }}"
+    >
+  </div>
+
+  <div class="about-profile__details">
+
+    {% if site.author.name %}
+      <h2 class="about-profile__name">
+        {{ site.author.name }}
+      </h2>
+    {% endif %}
+
+    <div class="about-profile__bio">
+      <p>
+        Ph.D. Candidate, Purdue University
+      </p>
+
+    </div>
+
+    <hr class="about-profile__divider">
+{% if site.author.email %}
+<div class="about-profile__links">
+  <a href="mailto:{{ site.author.email }}">
+    <i class="fas fa-envelope"></i> Email
+  </a>
+
+  {% if site.author.googlescholar %}
+  <a href="{{ site.author.googlescholar }}" target="_blank">
+    <i class="fas fa-graduation-cap"></i> Google Scholar
+  </a>
+  {% endif %}
+
+  <a href="{{ base_path }}/assets/CV_JLiu.pdf" target="_blank">
+    <i class="fas fa-file-pdf"></i>
+    Curriculum Vitae
+  </a>
+
+  {% if site.author.linkedin %}
+  <a href="{{ site.author.linkedin }}" target="_blank">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+  {% endif %}
+
+  {% if site.author.github %}
+  <a href="https://github.com/{{ site.author.github }}" target="_blank">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+  {% endif %}
+
+  {% if site.author.cv %}
+  <a href="{{ base_path }}/{{ site.author.cv }}" target="_blank">
+    <i class="fas fa-file-pdf"></i> CV
+  </a>
+  {% endif %}
+</div>
+{% endif %}
+
+    <!-- Your Email / Google Scholar / CV links go here -->
+
+  </div>
+
+</div>

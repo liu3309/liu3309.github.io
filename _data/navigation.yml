@@ -1,0 +1,21 @@
+# The following is the order of the links in the left navigation.
+
+main:
+  - title: "About"
+    url: /
+
+  - title: "Research"
+    url: /research/
+    children:
+      - title: "Sponsored Projects"
+        url: /research/#sponsored-projects
+      - title: "Publications"
+        url: /research/#publications
+      - title: "Conference Activities"
+        url: /research/#conference-activities
+        
+  - title: "Teaching"
+    url: /teaching/
+
+  # - title: "CV"
+  #   url: /cv/
