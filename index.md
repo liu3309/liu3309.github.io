@@ -101,15 +101,7 @@ Beyond research, I serve as the Graduate Course Instructor for AT 102 - Aviation
   <h3>Reviewer</h3>
 
   <div class="cv-row">
-    - Journal of Air Transport Management (JATM)
-  </div>
-
-  <div class="cv-row">
-    - Reliability Engineering & System Safety (RESS)
-  </div>
-
-  <div class="cv-row">
-    - Journal of Transport Geography (JTG)
+    - American Journal of Aerospace Engineering (AJAE)
   </div>
 
   <div class="cv-row">
@@ -117,11 +109,19 @@ Beyond research, I serve as the Graduate Course Instructor for AT 102 - Aviation
   </div>
 
   <div class="cv-row">
-    - American Journal of Aerospace Engineering (AJAE)
+    - International Journal of Aviation, Aeronautics, and Aerospace (IJAAA)
   </div>
 
   <div class="cv-row">
-    - International Journal of Aviation, Aeronautics, and Aerospace (IJAAA)
+    - Journal of Air Transport Management (JATM)
+  </div>
+
+  <div class="cv-row">
+    - Journal of Transport Geography (JTG)
+  </div>
+
+  <div class="cv-row">
+    - Reliability Engineering & System Safety (RESS)
   </div>
 
   <div style="height: 1.2rem;"></div>
@@ -129,11 +129,11 @@ Beyond research, I serve as the Graduate Course Instructor for AT 102 - Aviation
   <h3>Professional Affiliation</h3>
 
   <div class="cv-row">
-    - American Association of Airport Executives (AAAE)
+    - Air Transport Research Society (ATRS)
   </div>
 
   <div class="cv-row">
-    - Air Transport Research Society (ATRS)
+    - American Association of Airport Executives (AAAE)
   </div>
 
   <div class="cv-row">
