@@ -4,9 +4,9 @@ permalink: /
 layout: single 
 classes: wide 
 author_profile: false 
-
-{% include about-profile.html %} 
 ---
+{% include about-profile.html %} 
+
 
 I am a Ph.D. candidate in School of Aviation and Transportation Technology at Purdue University, advised by Professor <a href="https://sites.google.com/view/yi-gao/home" target="_blank" rel="noopener">Yi Gao</a>. I was awarded the Ross Fellowship to support my doctoral studies, in recognition of my academic achievement and research potential, following an M.S. in Aviation Management during which I began serving as both a teaching and research assistant.
 
