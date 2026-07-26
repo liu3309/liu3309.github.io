@@ -25,7 +25,7 @@ author_profile: false
 
 <p class="research-entry">
 <strong>Role:</strong> Graduate Teaching Assistant<br>
-<strong>Semester:</strong> 2021<br>
+<strong>Semesters:</strong> 2021<br>
 <strong>Class Size:</strong> 25<br>
 <strong>Course Overview:</strong> The course concentrates on increasing the understanding of financial expertise in analyzing trading and hedging programs for application in reducing aviation operational risk exposure. The studies include research into the development and use of operational indexes and their possible relation to hedging with commodity and security instruments. Emphasis will be placed on the understanding of current operational measurements and correlations to trading and hedging financial instruments in providing improved risk management in operational environments.
 
