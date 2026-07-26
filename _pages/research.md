@@ -235,7 +235,11 @@ document.addEventListener("DOMContentLoaded", function () {
   ].filter(Boolean);
 
   const links = Array.from(
-    document.querySelectorAll(".research-subnav-link")
+    document.querySelectorAll(
+      '.sidebar a[href*="#sponsored-projects"], ' +
+      '.sidebar a[href*="#publications"], ' +
+      '.sidebar a[href*="#conference-activities"]'
+    )
   );
 
   if (!sections.length || !links.length) return;
@@ -257,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const observer = new IntersectionObserver(
     function (entries) {
-      const visibleEntries = entries
+      const visibleSections = entries
         .filter(function (entry) {
           return entry.isIntersecting;
         })
@@ -265,8 +269,8 @@ document.addEventListener("DOMContentLoaded", function () {
           return a.boundingClientRect.top - b.boundingClientRect.top;
         });
 
-      if (visibleEntries.length) {
-        activateLink(visibleEntries[0].target.id);
+      if (visibleSections.length > 0) {
+        activateLink(visibleSections[0].target.id);
       }
     },
     {
@@ -278,5 +282,13 @@ document.addEventListener("DOMContentLoaded", function () {
   sections.forEach(function (section) {
     observer.observe(section);
   });
+
+  const initialSection = window.location.hash.replace("#", "");
+
+  if (initialSection) {
+    activateLink(initialSection);
+  } else {
+    activateLink(sections[0].id);
+  }
 });
 </script>
