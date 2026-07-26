@@ -129,15 +129,15 @@ Beyond research, I serve as the Graduate Course Instructor for AT 102 - Aviation
   <h3>Professional Affiliation</h3>
 
   <div class="cv-row">
-    - Air Transport Research Society (ATRS)
-  </div>
-
-  <div class="cv-row">
     - American Association of Airport Executives (AAAE)
   </div>
 
   <div class="cv-row">
     - American Association of Geographers (AAG)
+  </div>
+  
+  <div class="cv-row">
+    - Air Transport Research Society (ATRS)
   </div>
 
   <div class="cv-row">
