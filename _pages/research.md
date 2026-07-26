@@ -223,3 +223,60 @@ Wang, S., <strong>Liu, J.</strong>, Xie, H., &amp; Gao, Y. <em>What is aviation 
 </p>
 
 </section>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = [
+    document.getElementById("sponsored-projects"),
+    document.getElementById("publications"),
+    document.getElementById("conference-activities")
+  ].filter(Boolean);
+
+  const links = Array.from(
+    document.querySelectorAll(".research-subnav-link")
+  );
+
+  if (!sections.length || !links.length) return;
+
+  function activateLink(sectionId) {
+    links.forEach(function (link) {
+      const linkSectionId = link.hash.replace("#", "");
+      const isActive = linkSectionId === sectionId;
+
+      link.classList.toggle("is-active", isActive);
+
+      if (isActive) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(
+    function (entries) {
+      const visibleEntries = entries
+        .filter(function (entry) {
+          return entry.isIntersecting;
+        })
+        .sort(function (a, b) {
+          return a.boundingClientRect.top - b.boundingClientRect.top;
+        });
+
+      if (visibleEntries.length) {
+        activateLink(visibleEntries[0].target.id);
+      }
+    },
+    {
+      rootMargin: "-20% 0px -65% 0px",
+      threshold: 0
+    }
+  );
+
+  sections.forEach(function (section) {
+    observer.observe(section);
+  });
+});
+</script>
