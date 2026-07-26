@@ -4,7 +4,7 @@ permalink: /
 layout: single 
 classes: wide 
 author_profile: false 
---- 
+
 {% include about-profile.html %} 
 ---
 
