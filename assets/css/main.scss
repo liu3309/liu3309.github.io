@@ -1817,3 +1817,20 @@ html {
     border-radius: 50%;
   }
 }
+
+/* ==========================================================================
+   ADD BREATHING ROOM ABOVE NAVIGATION & CONTENT
+   ========================================================================== */
+
+@media screen and (max-width: 1199px) {
+
+  /* Space above the navigation */
+  .masthead__inner-wrap {
+    padding-top: 1.5rem !important;
+  }
+
+  /* Space between navigation and page content */
+  #main {
+    padding-top: 1rem !important;
+  }
+}
