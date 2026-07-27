@@ -56,9 +56,17 @@
 
 .left-nav__list,
 .left-nav__sublist {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.35rem 1rem;
+
+    margin: 0;
+    padding-left: 1.5rem;
+
+    /* Make the submenu extend farther to the right */
+    width: calc(100% + 4rem);
+    max-width: none;
 }
 
 .left-nav__item,
