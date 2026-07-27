@@ -1845,31 +1845,18 @@ html {
    FINAL RESEARCH DIVIDER CLEANUP
    Removes faint gray separators while keeping the blue H2 accent line
    ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   1. Remove the faint divider under the generated page title: "Research"
-   -------------------------------------------------------------------------- */
-
+/* Remove the faint line under the generated page title */
 .page__header,
-.page__inner-wrap > header {
-  border: 0 !important;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-
-  box-shadow: none !important;
-  background-image: none !important;
-}
-
+.page__inner-wrap > header,
 #page-title,
 .page__title {
   border: 0 !important;
-  border-top: 0 !important;
   border-bottom: 0 !important;
-
   box-shadow: none !important;
   background-image: none !important;
 }
 
+/* Remove theme-created pseudo-element from the page title */
 #page-title::before,
 #page-title::after,
 .page__title::before,
@@ -1878,37 +1865,19 @@ html {
   content: none !important;
 }
 
-
-/* --------------------------------------------------------------------------
-   2. Remove all faint theme borders from H2 headings
-   -------------------------------------------------------------------------- */
-
+/* Remove faint gray borders from H2 headings */
 .page__content h2,
 .research-section h2 {
   position: relative !important;
 
   border: 0 !important;
-  border-top: 0 !important;
-  border-right: 0 !important;
   border-bottom: 0 !important;
-  border-left: 0 !important;
 
-  outline: 0 !important;
   box-shadow: none !important;
   background-image: none !important;
 }
 
-
-/* --------------------------------------------------------------------------
-   3. Keep only the blue accent line below H2 headings
-   -------------------------------------------------------------------------- */
-
-.page__content h2::before,
-.research-section h2::before {
-  display: none !important;
-  content: none !important;
-}
-
+/* Keep only the blue line below H2 headings */
 .page__content h2::after,
 .research-section h2::after {
   content: "" !important;
@@ -1932,53 +1901,51 @@ html {
   box-shadow: none !important;
 }
 
-
-/* --------------------------------------------------------------------------
-   4. Remove separators between Research page sections
-   -------------------------------------------------------------------------- */
-
+/* Remove borders between Research sections without hiding content */
 .research-section,
 .research-section + .research-section {
   border: 0 !important;
   border-top: 0 !important;
   border-bottom: 0 !important;
 
-  outline: 0 !important;
   box-shadow: none !important;
   background-image: none !important;
 }
 
-.research-section::before,
-.research-section::after {
-  display: none !important;
-  content: none !important;
-}
-
-
-/* --------------------------------------------------------------------------
-   5. Remove HR elements used between the three main Research sections
-   -------------------------------------------------------------------------- */
-
-.page__content > hr,
-.research-section > hr,
-.research-section + hr,
-hr + .research-section {
-  display: none !important;
-
+/* Keep HR elements in the document, but make only ordinary section HRs invisible */
+.page__content > hr:not(.research-project__divider),
+.research-section > hr:not(.research-project__divider) {
   height: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
 
   border: 0 !important;
-  background: none !important;
+  background: transparent !important;
   box-shadow: none !important;
 }
 
+/* Keep the intentional sponsored-project divider */
+.research-project__divider {
+  display: block !important;
 
-/* --------------------------------------------------------------------------
-   6. Responsive heading spacing
-   -------------------------------------------------------------------------- */
+  width: 100% !important;
+  height: 3px !important;
 
+  margin: 3rem 0 !important;
+  border: 0 !important;
+
+  background: linear-gradient(
+    to right,
+    rgba(42, 122, 185, 0.35),
+    #2a7ab9 20%,
+    #2a7ab9 80%,
+    rgba(42, 122, 185, 0.35)
+  ) !important;
+
+  border-radius: 3px !important;
+}
+
+/* Responsive spacing */
 @media screen and (max-width: 1199px) {
 
   .page__content h2,
@@ -1986,16 +1953,39 @@ hr + .research-section {
     margin-top: 1rem !important;
     margin-bottom: 0.75rem !important;
     padding-bottom: 0.35rem !important;
-
-    border: 0 !important;
-    box-shadow: none !important;
   }
 
   .research-section + .research-section {
     margin-top: 1.5rem !important;
     padding-top: 0.25rem !important;
-
-    border: 0 !important;
-    box-shadow: none !important;
   }
+
+  .research-project__divider {
+    margin: 1.75rem 0 !important;
+  }
+}
+
+
+/* ==========================================================================
+   ABOUT PAGE NAME — NO DIVIDER
+   ========================================================================== */
+
+.about-profile__name,
+.about-profile__name.h2,
+.about-profile h2 {
+    border: none !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0.4rem !important;
+
+    background: none !important;
+    box-shadow: none !important;
+}
+
+.about-profile__name::before,
+.about-profile__name::after,
+.about-profile h2::before,
+.about-profile h2::after {
+    content: none !important;
+    display: none !important;
 }
