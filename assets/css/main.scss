@@ -327,35 +327,63 @@
     padding: 0.75rem 1rem;
   }
 
-  .left-nav__list {
+//   .left-nav__list {
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: center;
+
+//     gap: 0.25rem 1rem;
+//   }
+
+//   .left-nav__item {
+//     width: auto;
+//   }
+
+//   .left-nav__item > a,
+//   .left-nav__section-title {
+//     display: block;
+//     padding: 0.45rem 0;
+//   }
+
+//   .left-nav__item--title {
+//     width: 100%;
+//     margin-bottom: 0.25rem;
+//   }
+
+// .left-nav__item--title > a {
+//   font-weight: 400;
+// }
+
+// .left-nav__item--title > a.active {
+//   font-weight: 700;
+// }
+
+
+    /* Give the submenu a little left indentation */
+  .left-nav__sublist {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-
-    gap: 0.25rem 1rem;
+    gap: 0.35rem;
+    padding-left: 1.5rem;
   }
 
-  .left-nav__item {
-    width: auto;
+  /* Make each submenu item occupy a wider area */
+  .left-nav__subitem {
+    flex: 0 0 auto;
   }
 
-  .left-nav__item > a,
-  .left-nav__section-title {
+  .left-nav__subitem > a {
     display: block;
-    padding: 0.45rem 0;
+    width: 15rem;              /* <-- adjust this value */
+    padding: 0.45rem 1rem;
+    box-sizing: border-box;
   }
 
-  .left-nav__item--title {
-    width: 100%;
-    margin-bottom: 0.25rem;
+  /* Keep the highlight/background the same width */
+  .left-nav__subitem > a.active,
+  .left-nav__subitem > a:hover {
+    width: 15rem;
   }
-
-.left-nav__item--title > a {
-  font-weight: 400;
-}
-
-.left-nav__item--title > a.active {
-  font-weight: 700;
 }
 
   /*
