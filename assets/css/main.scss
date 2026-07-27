@@ -1700,3 +1700,32 @@ html {
     padding-right: 0.8rem !important;
   }
 }
+
+
+
+/* ==========================================================================
+   FULL-WIDTH MAIN NAV HIGHLIGHT ON TABLET AND MOBILE
+   ========================================================================== */
+
+@media screen and (max-width: 1199px) {
+
+  /* Make About, Research, and Teaching use the full row */
+  .left-nav__item:not(.left-nav__item--title):not(.left-nav__item--theme) {
+    width: 100% !important;
+  }
+
+  /* Make the clickable area fill the row */
+  .left-nav__item:not(.left-nav__item--title):not(.left-nav__item--theme) > a,
+  .left-nav__section-title {
+    display: block;
+    width: 100%;
+  }
+
+  /* Keep active and hover backgrounds full width */
+  .left-nav__item:not(.left-nav__item--title):not(.left-nav__item--theme) > a.active,
+  .left-nav__section-title.active,
+  .left-nav__item:not(.left-nav__item--title):not(.left-nav__item--theme) > a:hover,
+  .left-nav__section-title:hover {
+    width: 100%;
+  }
+}
