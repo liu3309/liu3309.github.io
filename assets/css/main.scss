@@ -1713,54 +1713,120 @@ html {
   }
 }
 
+
 /* ==========================================================================
-   ABOUT PAGE: REMOVE LARGE GAP BELOW PAGE TITLE ON TABLET AND MOBILE
+   REMOVE GAP BETWEEN PAGE TITLE AND CONTENT ON LAPTOP, TABLET, AND MOBILE
    ========================================================================== */
 
 @media screen and (max-width: 1199px) {
-  .page__title,
-  .page__content > h1:first-child {
+
+  /* Reset the header that contains the generated page title */
+  .page__inner-wrap > header,
+  .page__header,
+  header.page__header {
+    position: static !important;
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
     height: auto !important;
     min-height: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0.75rem !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: none !important;
   }
 
-  .about-profile {
+  /* Reset the generated "About" title */
+  #page-title,
+  .page__title {
     position: static !important;
-    top: auto !important;
-    left: auto !important;
+    display: block !important;
+    float: none !important;
+    clear: none !important;
+
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin: 0 0 0.75rem !important;
+    padding: 0 !important;
+
     transform: none !important;
+  }
+
+  /* Remove spacing between the title header and page content */
+  .page__inner-wrap > header + .page__content,
+  .page__header + .page__content,
+  .page__content {
+    position: static !important;
+    float: none !important;
+    clear: none !important;
 
     height: auto !important;
     min-height: 0 !important;
 
     margin-top: 0 !important;
-    margin-bottom: 1.5rem !important;
     padding-top: 0 !important;
+
+    transform: none !important;
+  }
+
+  /* Reset the About profile itself */
+  .about-profile {
+    position: static !important;
+    display: flex !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin: 0 0 1.5rem !important;
+    padding: 0 !important;
+
+    transform: none !important;
   }
 
   .about-profile__photo,
   .about-profile__details {
     position: static !important;
-    top: auto !important;
-    transform: none !important;
 
     height: auto !important;
     min-height: 0 !important;
+    max-height: none !important;
+
     margin-top: 0 !important;
     padding-top: 0 !important;
+
+    transform: none !important;
   }
 }
 
+
+/* Phone layout */
 @media screen and (max-width: 700px) {
+
   .about-profile {
     display: block !important;
+    margin-top: 0 !important;
   }
 
   .about-profile__photo {
-    margin-bottom: 1rem !important;
+    margin: 0 0 1rem !important;
+  }
+
+  .about-profile__photo img {
+    display: block !important;
+
+    width: 140px !important;
+    height: 140px !important;
+
+    margin: 0 !important;
+
+    object-fit: cover;
+    border-radius: 50%;
   }
 }
