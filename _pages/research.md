@@ -88,7 +88,6 @@ This project develops a national framework to assess the necessity and spatial f
 
 
 <hr class="section-divider--compact">
-</section>
 <section id="publications" class="research-section">
 <h2 id="publications">Publications</h2>
 
