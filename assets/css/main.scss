@@ -292,12 +292,6 @@
 
 @media screen and (max-width: 1199px) {
 
-  /*
-   * On smaller screens, restore the masthead to the top of the page.
-   * All links remain visible because the old Greedy Navigation system
-   * has been removed.
-   */
-
   .masthead {
     position: relative !important;
 
@@ -327,69 +321,6 @@
     padding: 0.75rem 1rem;
   }
 
-//   .left-nav__list {
-//     display: flex;
-//     flex-wrap: wrap;
-//     align-items: center;
-
-//     gap: 0.25rem 1rem;
-//   }
-
-//   .left-nav__item {
-//     width: auto;
-//   }
-
-//   .left-nav__item > a,
-//   .left-nav__section-title {
-//     display: block;
-//     padding: 0.45rem 0;
-//   }
-
-//   .left-nav__item--title {
-//     width: 100%;
-//     margin-bottom: 0.25rem;
-//   }
-
-// .left-nav__item--title > a {
-//   font-weight: 400;
-// }
-
-// .left-nav__item--title > a.active {
-//   font-weight: 700;
-// }
-
-
-    /* Give the submenu a little left indentation */
-  .left-nav__sublist {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    padding-left: 1.5rem;
-  }
-
-  /* Make each submenu item occupy a wider area */
-  .left-nav__subitem {
-    flex: 0 0 auto;
-  }
-
-  .left-nav__subitem > a {
-    display: block;
-    width: 15rem;              /* <-- adjust this value */
-    padding: 0.45rem 1rem;
-    box-sizing: border-box;
-  }
-
-  /* Keep the highlight/background the same width */
-  .left-nav__subitem > a.active,
-  .left-nav__subitem > a:hover {
-    width: 15rem;
-  }
-}
-
-  /*
-   * Keep Research and its subtabs grouped together on a separate row.
-   */
-
   .left-nav__item--section {
     width: 100%;
   }
@@ -402,22 +333,29 @@
     display: flex;
     flex-wrap: wrap;
 
-    gap: 0.25rem 1rem;
-
+    gap: 0.35rem;
     margin: 0;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .left-nav__subitem {
+    flex: 0 0 auto;
   }
 
   .left-nav__subitem > a {
     display: block;
+    width: 15rem;
 
-    padding: 0.3rem 0;
+    padding: 0.45rem 1rem;
 
+    box-sizing: border-box;
     font-size: 0.9em;
     opacity: 0.85;
   }
 
+  .left-nav__subitem > a.active,
   .left-nav__subitem > a:hover {
+    width: 15rem;
     opacity: 1;
   }
 
@@ -450,8 +388,6 @@
     margin-top: 0 !important;
   }
 }
-
-
 
 /* ==========================================================================
    ABOUT PAGE PROFILE
