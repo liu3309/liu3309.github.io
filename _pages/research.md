@@ -10,7 +10,7 @@ classes: wide
 author_profile: false
 ---
 
-<section id="sponsored-projects" class="research-section">
+
 
 
 <section id="sponsored-projects" class="research-section">
@@ -232,21 +232,77 @@ Wang, S., <strong>Liu, J.</strong>, Xie, H., &amp; Gao, Y. <em>What is aviation 
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const sections = [
-    document.getElementById("sponsored-projects"),
-    document.getElementById("publications"),
-    document.getElementById("conference-activities")
-  ].filter(Boolean);
+  const sectionIds = [
+    "sponsored-projects",
+    "publications",
+    "conference-activities"
+  ];
+
+  const sections = sectionIds
+    .map(function (id) {
+      return document.getElementById(id);
+    })
+    .filter(Boolean);
 
   const links = Array.from(
     document.querySelectorAll(
-      '.sidebar a[href*="#sponsored-projects"], ' +
-      '.sidebar a[href*="#publications"], ' +
-      '.sidebar a[href*="#conference-activities"]'
+      '.left-nav a[href$="#sponsored-projects"], ' +
+      '.left-nav a[href$="#publications"], ' +
+      '.left-nav a[href$="#conference-activities"], ' +
+      '.sidebar a[href$="#sponsored-projects"], ' +
+      '.sidebar a[href$="#publications"], ' +
+      '.sidebar a[href$="#conference-activities"]'
     )
   );
 
-  if (!sections.length || !links.length) return;
+  function getScrollOffset() {
+    /*
+     * On desktop, the navigation is on the left and does not cover the page.
+     * On tablet/mobile, it is fixed at the top.
+     */
+    if (window.innerWidth >= 1200) {
+      return 30;
+    }
+
+    const masthead = document.querySelector(".masthead");
+
+    if (!masthead) {
+      return 20;
+    }
+
+    return masthead.getBoundingClientRect().height + 20;
+  }
+
+  function scrollToSection(sectionId, updateUrl) {
+    const target = document.getElementById(sectionId);
+
+    if (!target) return;
+
+    const targetPosition =
+      window.scrollY +
+      target.getBoundingClientRect().top -
+      getScrollOffset();
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth"
+    });
+
+    if (updateUrl) {
+      history.pushState(null, "", "#" + sectionId);
+    }
+  }
+
+  links.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      const sectionId = link.hash.replace("#", "");
+
+      if (!sectionIds.includes(sectionId)) return;
+
+      event.preventDefault();
+      scrollToSection(sectionId, true);
+    });
+  });
 
   function activateLink(sectionId) {
     links.forEach(function (link) {
@@ -278,7 +334,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     },
     {
-      rootMargin: "-20% 0px -65% 0px",
+      rootMargin: "-25% 0px -60% 0px",
       threshold: 0
     }
   );
@@ -289,9 +345,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const initialSection = window.location.hash.replace("#", "");
 
-  if (initialSection) {
-    activateLink(initialSection);
-  } else {
+  if (sectionIds.includes(initialSection)) {
+    /*
+     * Wait until the fixed navigation has finished rendering before scrolling.
+     */
+    window.setTimeout(function () {
+      scrollToSection(initialSection, false);
+      activateLink(initialSection);
+    }, 100);
+  } else if (sections.length > 0) {
     activateLink(sections[0].id);
   }
 });
