@@ -125,7 +125,7 @@ Wang, S., Dou, Z., <strong>Liu, J.</strong>, &amp; Gao, Y. (2025). The fate of A
 
 
 <p class="research-entry">
-<strong>Gao, Y.</strong>, Dou, Z., Wang, S., &amp; <strong>Liu, J.</strong> (Under Review). What Causes the Discrepancies Between Scheduled and Actual Flight Block Times? Evidence from US Domestic Airline Operations. <em>Transportation Research Part A: Policy and Practice</em>.
+Gao, Y., Dou, Z., Wang, S., &amp; <strong>Liu, J.</strong> (Under Review). What Causes the Discrepancies Between Scheduled and Actual Flight Block Times? Evidence from US Domestic Airline Operations. <em>Transportation Research Part A: Policy and Practice</em>.
 </p>
 
 
