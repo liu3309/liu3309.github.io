@@ -17,7 +17,7 @@ author_profile: false
 <div style="height: 2rem;"></div>
 <h2 id="sponsored-projects">Sponsored Projects</h2>
 
-<h3>Airport Cooperative Research Project 11-04: Mapping Airport Expansion Potential</h3>
+<h3>[ACRP 11-04] Mapping U.S. Airport Expansion Potential</h3>
 
 <p class="research-project__meta">
   <strong>Funding Agency:</strong> Airport Cooperative Research Program (ACRP), Transportation Research Board (TRB), National Academies of Sciences, Engineering, and Medicine (NASEM) <br>
