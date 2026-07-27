@@ -1555,30 +1555,64 @@ body {
 
 
 
+/* ==========================================================================
+   RESEARCH SUBNAVIGATION: ANCHORS, SMOOTH SCROLL, AND ACTIVE SECTION
+   ========================================================================== */
 
-.sidebar a[href*="#sponsored-projects"],
-.sidebar a[href*="#publications"],
-.sidebar a[href*="#conference-activities"] {
+/* Smooth scrolling for internal anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+ * Prevent an anchored heading from sitting too close to the top.
+ * This applies to the three main Research sections.
+ */
+#sponsored-projects,
+#publications,
+#conference-activities {
+  scroll-margin-top: 5rem;
+}
+
+/* Research submenu links */
+.left-nav__subitem > a[data-research-section] {
   display: block;
-  padding: 0.3rem 0.5rem 0.3rem 1rem;
-  border-left: 2px solid transparent;
+  width: 100%;
+  padding: 0.35rem 0 0.35rem 0.75rem;
+
+  color: var(--global-masthead-link-color);
+  font-size: 0.9em;
+  line-height: 1.35;
   text-decoration: none;
+
+  border-left: 2px solid transparent;
+  opacity: 0.85;
+
   transition:
     color 0.2s ease,
     border-color 0.2s ease,
-    background-color 0.2s ease;
+    background-color 0.2s ease,
+    opacity 0.2s ease;
 }
 
-.sidebar a[href*="#sponsored-projects"]:hover,
-.sidebar a[href*="#publications"]:hover,
-.sidebar a[href*="#conference-activities"]:hover {
-  color: #2a7ab9;
+/* Hover state */
+.left-nav__subitem > a[data-research-section]:hover {
+  color: var(--global-masthead-link-color-hover);
+  border-left-color: rgba(42, 122, 185, 0.45);
+  opacity: 1;
 }
 
-.sidebar a.is-active {
+/* Automatically highlighted section */
+.left-nav__subitem > a[data-research-section].active {
   color: #2a7ab9 !important;
-  font-weight: 600;
+  font-weight: 700 !important;
   border-left-color: #2a7ab9;
-  background: rgba(42, 122, 185, 0.07);
+  background-color: rgba(42, 122, 185, 0.07);
+  opacity: 1;
 }
 
+/* Keyboard accessibility */
+.left-nav__subitem > a[data-research-section]:focus-visible {
+  outline: 2px solid #2a7ab9;
+  outline-offset: 2px;
+}
