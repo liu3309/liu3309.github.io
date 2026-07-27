@@ -2090,3 +2090,80 @@ h2#publications {
     margin-top: 2.5rem !important;
   }
 }
+
+
+
+/* ==========================================================================
+   RESTORE H2 DIVIDERS ON ABOUT AND TEACHING PAGES
+   ========================================================================== */
+
+/*
+ * Restore the divider for normal H2 headings.
+ * Exclude the About-page profile name.
+ */
+.page__content h2:not(.about-profile__name),
+.about-profile__bio h2 {
+  position: relative !important;
+
+  margin-top: 1.75rem !important;
+  margin-bottom: 1rem !important;
+  padding-bottom: 0.55rem !important;
+
+  border: 0 !important;
+  border-bottom: 1px solid #d5dce5 !important;
+
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Blue accent line */
+.page__content h2:not(.about-profile__name)::after,
+.about-profile__bio h2::after {
+  content: "" !important;
+
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -2px !important;
+
+  display: block !important;
+
+  width: 630px !important;
+  max-width: 100% !important;
+  height: 3px !important;
+
+  background: #2a7ab9 !important;
+  border: 0 !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+}
+
+/* Keep the profile name completely divider-free */
+.about-profile__name,
+.about-profile h2.about-profile__name {
+  padding-bottom: 0 !important;
+
+  border: 0 !important;
+  border-bottom: 0 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.about-profile__name::before,
+.about-profile__name::after,
+.about-profile h2.about-profile__name::before,
+.about-profile h2.about-profile__name::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Tablet and mobile spacing */
+@media screen and (max-width: 1199px) {
+  .page__content h2:not(.about-profile__name),
+  .about-profile__bio h2 {
+    margin-top: 1.25rem !important;
+    margin-bottom: 0.75rem !important;
+    padding-bottom: 0.4rem !important;
+  }
+}
