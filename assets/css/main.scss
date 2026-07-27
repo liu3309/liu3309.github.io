@@ -1712,3 +1712,55 @@ html {
     margin-top: 0 !important;
   }
 }
+
+/* ==========================================================================
+   ABOUT PAGE: REMOVE LARGE GAP BELOW PAGE TITLE ON TABLET AND MOBILE
+   ========================================================================== */
+
+@media screen and (max-width: 1199px) {
+  .page__title,
+  .page__content > h1:first-child {
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.75rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .about-profile {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 1.5rem !important;
+    padding-top: 0 !important;
+  }
+
+  .about-profile__photo,
+  .about-profile__details {
+    position: static !important;
+    top: auto !important;
+    transform: none !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about-profile {
+    display: block !important;
+  }
+
+  .about-profile__photo {
+    margin-bottom: 1rem !important;
+  }
+}
