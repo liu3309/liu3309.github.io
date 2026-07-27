@@ -2223,41 +2223,61 @@ h2#conference-activities::after,
    RESEARCH ANCHOR SCROLL POSITION
    ========================================================================== */
 
-/* Desktop: navigation is on the left, so only a small top margin is needed */
-@media screen and (min-width: 1200px) {
-  html {
-    scroll-padding-top: 2rem !important;
-  }
+// /* Desktop: navigation is on the left, so only a small top margin is needed */
+// @media screen and (min-width: 1200px) {
+//   html {
+//     scroll-padding-top: 2rem !important;
+//   }
 
-  #sponsored-projects,
-  #publications,
-  #conference-activities {
+//   #sponsored-projects,
+//   #publications,
+//   #conference-activities {
+//     scroll-margin-top: 2rem !important;
+//   }
+// }
+
+// /* Tablet: account for the fixed top navigation */
+// @media screen and (min-width: 701px) and (max-width: 1199px) {
+//   html {
+//     scroll-padding-top: 240px !important;
+//   }
+
+//   #sponsored-projects,
+//   #publications,
+//   #conference-activities {
+//     scroll-margin-top: 540px !important;
+//   }
+// }
+
+// /* Phone: the navigation is taller */
+// @media screen and (max-width: 700px) {
+//   html {
+//     scroll-padding-top: 460px !important;
+//   }
+
+//   #sponsored-projects,
+//   #publications,
+//   #conference-activities {
+//     scroll-margin-top: 660px !important;
+//   }
+// }
+
+
+/* Anchor offset for fixed navigation */
+@media screen and (min-width: 1200px) {
+  .research-section {
     scroll-margin-top: 2rem !important;
   }
 }
 
-/* Tablet: account for the fixed top navigation */
 @media screen and (min-width: 701px) and (max-width: 1199px) {
-  html {
-    scroll-padding-top: 240px !important;
-  }
-
-  #sponsored-projects,
-  #publications,
-  #conference-activities {
-    scroll-margin-top: 540px !important;
+  .research-section {
+    scroll-margin-top: 260px !important;
   }
 }
 
-/* Phone: the navigation is taller */
 @media screen and (max-width: 700px) {
-  html {
-    scroll-padding-top: 460px !important;
-  }
-
-  #sponsored-projects,
-  #publications,
-  #conference-activities {
-    scroll-margin-top: 660px !important;
+  .research-section {
+    scroll-margin-top: 380px !important;
   }
 }
