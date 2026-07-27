@@ -859,20 +859,16 @@ body #main {
    ========================================================================== */
 
 :root {
-  /* Responsive desktop sidebar width */
   --sidebar-width: clamp(210px, 16vw, 250px);
-
-  /* Responsive left and right spacing for the main page */
   --content-gap: clamp(11rem, 11vw, 6rem);
 
-  /* Tablet spacing */
-  --tablet-gap: clamp(1.5rem, 5vw, 3rem);
+  /* Smaller tablet side margins */
+  --tablet-gap: clamp(1rem, 3vw, 1.75rem);
 
-  /* Mobile spacing */
-  --mobile-gap: 1.25rem;
+  /* Smaller phone side margins */
+  --mobile-gap: 0.8rem;
 
   --global-bg-color: #fafaf8;
-  // --global-footer-bg-color: #fafaf8;
 }
 
 
