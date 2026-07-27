@@ -585,7 +585,7 @@
 .research-section + .research-section {
   margin-top: 3rem;
   padding-top: 0.5rem;
-  border-top: 1px solid var(--global-border-color);
+  border-top: none;
 }
 
 .left-nav__section-title {
@@ -1609,6 +1609,7 @@ html {
   .research-section + .research-section {
     margin-top: 1.5rem !important;
     padding-top: 0.25rem !important;
+    border-top: none !important;
   }
 
   /* Reduce spacing before subsection headings */
