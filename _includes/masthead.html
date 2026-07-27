@@ -109,26 +109,82 @@
   </div>
 </div>
 
+
+
+
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const sectionLinks = document.querySelectorAll("[data-research-section]");
+document.addEventListener("DOMContentLoaded", function () {
+  const sectionLinks = Array.from(
+    document.querySelectorAll("[data-research-section]")
+  );
 
-    function updateResearchSection() {
-      const currentSection = window.location.hash.replace("#", "");
+  if (!sectionLinks.length) return;
 
-      sectionLinks.forEach(function (link) {
-        const isActive = currentSection && link.dataset.researchSection === currentSection;
-        link.classList.toggle("active", Boolean(isActive));
+  const sections = sectionLinks
+    .map(function (link) {
+      return document.getElementById(link.dataset.researchSection);
+    })
+    .filter(Boolean);
 
-        if (isActive) {
-          link.setAttribute("aria-current", "location");
-        } else {
-          link.removeAttribute("aria-current");
-        }
-      });
-    }
+  function activateSection(sectionId) {
+    sectionLinks.forEach(function (link) {
+      const isActive =
+        link.dataset.researchSection === sectionId;
 
-    updateResearchSection();
-    window.addEventListener("hashchange", updateResearchSection);
+      link.classList.toggle("active", isActive);
+
+      if (isActive) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  function updateActiveSection() {
+    if (!sections.length) return;
+
+    const scrollOffset = 180;
+    let activeSection = sections[0];
+
+    sections.forEach(function (section) {
+      const sectionTop =
+        section.getBoundingClientRect().top;
+
+      if (sectionTop <= scrollOffset) {
+        activeSection = section;
+      }
+    });
+
+    activateSection(activeSection.id);
+  }
+
+  sectionLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      activateSection(link.dataset.researchSection);
+    });
   });
+
+  window.addEventListener("scroll", updateActiveSection, {
+    passive: true
+  });
+
+  window.addEventListener("hashchange", function () {
+    const sectionId =
+      window.location.hash.replace("#", "");
+
+    if (sectionId) {
+      activateSection(sectionId);
+    }
+  });
+
+  const initialSection =
+    window.location.hash.replace("#", "");
+
+  if (initialSection) {
+    activateSection(initialSection);
+  } else {
+    updateActiveSection();
+  }
+});
 </script>
