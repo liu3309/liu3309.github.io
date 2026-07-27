@@ -255,26 +255,26 @@
   .page__content {
     margin-top: 0 !important;
   }
-.page__content h2 {
-  position: relative;
-  margin-top: 1.75em;
-  margin-bottom: 1em;
-  padding-bottom: 0.5em;
-  font-size: 1.1em;
-  font-weight: 700;
-  border-bottom: 1px solid #d5dce5;
-}
+// .page__content h2 {
+//   position: relative;
+//   margin-top: 1.75em;
+//   margin-bottom: 1em;
+//   padding-bottom: 0.5em;
+//   font-size: 1.1em;
+//   font-weight: 700;
+//   border-bottom: 1px solid #d5dce5;
+// }
 
-.page__content h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 630px;
-  height: 3px;
-  background: #2a7ab9;
-  border-radius: 2px;
-}
+// .page__content h2::after {
+//   content: "";
+//   position: absolute;
+//   left: 0;
+//   bottom: -2px;
+//   width: 630px;
+//   height: 3px;
+//   background: #2a7ab9;
+//   border-radius: 2px;
+// }
 
 .page__content h3 {
   margin-top: 1.75rem;
@@ -1842,22 +1842,59 @@ html {
 
 
 /* ==========================================================================
-   FINAL HEADING DIVIDER STYLE
+   FINAL HEADING AND RESEARCH DIVIDER CONTROL
    ========================================================================== */
 
-/* --------------------------------------------------
-   Remove divider from generated page titles
-   Example: Research, About, Teaching
-   -------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Default H2 appearance
+
+   Remove all inherited/theme dividers first. This prevents lines from
+   appearing under the main page title or unintended Research subtitles.
+   -------------------------------------------------------------------------- */
+
+.page__content h2 {
+  position: relative;
+
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0;
+
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+.page__content h2::before,
+.page__content h2::after {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   Generated page titles
+
+   No divider under Research, About, Teaching, or other generated page titles.
+   -------------------------------------------------------------------------- */
 
 .page__header,
 .page__inner-wrap > header,
 .page__title,
 #page-title {
   border: 0 !important;
+  border-top: 0 !important;
   border-bottom: 0 !important;
+
+  background: transparent !important;
+  background-image: none !important;
   box-shadow: none !important;
-  background: none !important;
 }
 
 .page__title::before,
@@ -1869,31 +1906,52 @@ html {
 }
 
 
-/* --------------------------------------------------
+/* --------------------------------------------------------------------------
    Research section headings only
-   Sponsored Projects, Publications, Conference Activities
-   -------------------------------------------------- */
 
-.research-section > h2 {
+   Supports either:
+   1. the ID placed directly on the H2; or
+   2. the ID placed on a wrapper containing the H2.
+   -------------------------------------------------------------------------- */
+
+h2#sponsored-projects,
+h2#publications,
+h2#conference-activities,
+
+#sponsored-projects > h2:first-child,
+#publications > h2:first-child,
+#conference-activities > h2:first-child,
+
+#sponsored-projects h2:first-child,
+#publications h2:first-child,
+#conference-activities h2:first-child {
   position: relative !important;
 
-  margin-top: 2.4rem !important;
   margin-bottom: 1rem !important;
   padding-bottom: 0.55rem !important;
 
-  font-size: 1.1rem;
-  font-weight: 700;
-
-  /* full-width light divider */
   border: 0 !important;
-  border-bottom: 1px solid #d7dce3 !important;
+  border-bottom: 1px solid #d5dce5 !important;
 
-  box-shadow: none !important;
   background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
 }
 
-/* Blue accent over the light divider */
-.research-section > h2::after {
+
+/* Blue accent over the full-width light divider */
+
+h2#sponsored-projects::after,
+h2#publications::after,
+h2#conference-activities::after,
+
+#sponsored-projects > h2:first-child::after,
+#publications > h2:first-child::after,
+#conference-activities > h2:first-child::after,
+
+#sponsored-projects h2:first-child::after,
+#publications h2:first-child::after,
+#conference-activities h2:first-child::after {
   content: "" !important;
 
   position: absolute !important;
@@ -1906,6 +1964,9 @@ html {
   max-width: 100% !important;
   height: 3px !important;
 
+  margin: 0 !important;
+  padding: 0 !important;
+
   background: #2a7ab9 !important;
   border: 0 !important;
   border-radius: 2px !important;
@@ -1913,43 +1974,76 @@ html {
 }
 
 
-/* --------------------------------------------------
-   Remove any extra dividers between Research sections
-   -------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Research section separation
+
+   Remove any faint divider between sections while keeping the sections visible.
+   -------------------------------------------------------------------------- */
 
 .research-section,
-.research-section + .research-section {
+.research-section + .research-section,
+#sponsored-projects,
+#publications,
+#conference-activities {
   border: 0 !important;
   border-top: 0 !important;
   border-bottom: 0 !important;
 
-  box-shadow: none !important;
   background-image: none !important;
+  box-shadow: none !important;
 }
 
 
-/* --------------------------------------------------
-   More space before Publications
-   -------------------------------------------------- */
+/* Do not hide HR elements; only remove their visual line */
+
+.research-section > hr:not(.research-project__divider),
+.page__content > hr:not(.research-project__divider) {
+  display: block !important;
+
+  width: 100% !important;
+  height: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   Additional space before Publications
+   -------------------------------------------------------------------------- */
 
 #publications {
-  margin-top: 3rem !important;
+  margin-top: 4rem !important;
   padding-top: 1rem !important;
 }
 
+h2#publications {
+  margin-top: 4rem !important;
+}
 
-/* --------------------------------------------------
-   About-page name: no divider
-   -------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   About-page profile name
+
+   Never show a divider beneath the name.
+   -------------------------------------------------------------------------- */
 
 .about-profile__name,
 .about-profile h2 {
-  border: 0 !important;
-  border-bottom: 0 !important;
+  margin-bottom: 0.4rem !important;
   padding-bottom: 0 !important;
 
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+
+  background: transparent !important;
+  background-image: none !important;
   box-shadow: none !important;
-  background: none !important;
 }
 
 .about-profile__name::before,
@@ -1961,45 +2055,38 @@ html {
 }
 
 
-/* --------------------------------------------------
+/* --------------------------------------------------------------------------
    Tablet and mobile
-   -------------------------------------------------- */
+   -------------------------------------------------------------------------- */
 
 @media screen and (max-width: 1199px) {
 
-  .research-section > h2 {
-    margin-top: 1.75rem !important;
+  .page__content h2 {
+    margin-top: 1.25rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  h2#sponsored-projects,
+  h2#publications,
+  h2#conference-activities,
+
+  #sponsored-projects > h2:first-child,
+  #publications > h2:first-child,
+  #conference-activities > h2:first-child,
+
+  #sponsored-projects h2:first-child,
+  #publications h2:first-child,
+  #conference-activities h2:first-child {
     margin-bottom: 0.75rem !important;
     padding-bottom: 0.4rem !important;
   }
 
   #publications {
-    margin-top: 1rem !important;
+    margin-top: 2.5rem !important;
     padding-top: 0.75rem !important;
   }
-}
 
-
-/* ==========================================================================
-   ABOUT PAGE NAME — NO DIVIDER
-   ========================================================================== */
-
-.about-profile__name,
-.about-profile__name.h2,
-.about-profile h2 {
-    border: none !important;
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-    margin-bottom: 0.4rem !important;
-
-    background: none !important;
-    box-shadow: none !important;
-}
-
-.about-profile__name::before,
-.about-profile__name::after,
-.about-profile h2::before,
-.about-profile h2::after {
-    content: none !important;
-    display: none !important;
+  h2#publications {
+    margin-top: 2.5rem !important;
+  }
 }
