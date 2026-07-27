@@ -2167,3 +2167,38 @@ h2#conference-activities::after,
     padding-bottom: 0.4rem !important;
   }
 }
+
+
+
+/* ==========================================================================
+   STICKY TOP NAVIGATION FOR SHRUNK WINDOWS
+   ========================================================================== */
+
+@media screen and (max-width: 1199px) {
+
+  .masthead {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+
+    background-color: color-mix(
+      in srgb,
+      var(--global-bg-color) 90%,
+      transparent
+    ) !important;
+
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+
+    border-bottom: 1px solid var(--global-border-color) !important;
+
+    z-index: 9999 !important;
+  }
+
+  .masthead__inner-wrap {
+    background: transparent !important;
+  }
+}
+
