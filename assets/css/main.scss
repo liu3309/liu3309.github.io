@@ -1616,3 +1616,39 @@ html {
   outline: 2px solid #2a7ab9;
   outline-offset: 2px;
 }
+
+
+/* ==========================================================================
+   MAIN NAVIGATION ACTIVE STYLE
+   ========================================================================== */
+
+.left-nav__item:not(.left-nav__item--title) > a.active,
+.left-nav__section-title.active {
+  color: #2a7ab9 !important;
+  font-weight: 700 !important;
+
+  padding-left: 0.75rem;
+  border-left: 2px solid #2a7ab9;
+  background-color: rgba(42, 122, 185, 0.07);
+  opacity: 1;
+}
+
+.left-nav__item:not(.left-nav__item--title) > a:hover,
+.left-nav__section-title:hover {
+  color: var(--global-masthead-link-color-hover);
+
+  padding-left: 0.75rem;
+  border-left: 2px solid rgba(42, 122, 185, 0.45);
+  background-color: rgba(42, 122, 185, 0.04);
+}
+
+.left-nav__item:not(.left-nav__item--title) > a,
+.left-nav__section-title {
+  border-left: 2px solid transparent;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    padding-left 0.2s ease;
+}
