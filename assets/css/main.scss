@@ -538,13 +538,48 @@
 
 
 
-/* Force more space above all page content */
-body .initial-content {
-  padding-top: 5rem !important;
+// /* Force more space above all page content */
+// body .initial-content {
+//   padding-top: 5rem !important;
+// }
+
+// body #main {
+//   margin-top: 5rem !important;
+// }
+
+
+
+/* ==========================================================================
+   TOP SPACING DEPENDS ON LAYOUT
+   ========================================================================== */
+
+/* Desktop: keep spacing because sidebar is fixed on the left */
+@media screen and (min-width: 1200px) {
+
+  body .initial-content {
+    padding-top: 5rem !important;
+  }
+
+  body #main {
+    margin-top: 5rem !important;
+  }
 }
 
-body #main {
-  margin-top: 5rem !important;
+/* Laptop/tablet/mobile after navigation moves to the top */
+@media screen and (max-width: 1199px) {
+
+  body .initial-content {
+    padding-top: 0 !important;
+  }
+
+  body #main {
+    margin-top: 0 !important;
+  }
+
+  .masthead__inner-wrap {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
 }
 
 
@@ -1724,3 +1759,39 @@ html {
     width: 110%;
   }
 }
+
+
+
+/* ==========================================================================
+   REMOVE LARGE TOP GAP ON TABLET AND MOBILE
+   ========================================================================== */
+
+@media screen and (max-width: 1199px) {
+
+  /* Remove the desktop-sized blank space above page content */
+  body .initial-content {
+    padding-top: 1rem !important;
+  }
+
+  body #main {
+    margin-top: 0 !important;
+  }
+
+  /* Reduce blank space around the top navigation */
+  .masthead__inner-wrap {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  /* Reduce space below the site title */
+  .left-nav__item--title {
+    margin-bottom: 0 !important;
+  }
+
+  /* Reduce space around the line below JIAYU LIU */
+  .left-nav__divider {
+    margin-top: 0.4rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+}
+
