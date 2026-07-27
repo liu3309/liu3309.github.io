@@ -1841,46 +1841,161 @@ html {
 }
 
 
-
 /* ==========================================================================
-   H2 TITLE DIVIDER — ALL SCREEN SIZES
+   FINAL RESEARCH DIVIDER CLEANUP
+   Removes faint gray separators while keeping the blue H2 accent line
    ========================================================================== */
 
-.page__content h2 {
-  position: relative;
+/* --------------------------------------------------------------------------
+   1. Remove the faint divider under the generated page title: "Research"
+   -------------------------------------------------------------------------- */
 
-  margin-top: 1.75em;
-  margin-bottom: 1em;
-  padding-bottom: 0.5em;
+.page__header,
+.page__inner-wrap > header {
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
 
-  font-size: 1.1em;
-  font-weight: 700;
-
-  border-bottom: none;
+  box-shadow: none !important;
+  background-image: none !important;
 }
 
-.page__content h2::after {
-  content: "";
+#page-title,
+.page__title {
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
 
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-
-  width: 630px;
-  max-width: 100%;
-
-  height: 3px;
-
-  background: #2a7ab9;
-  border-radius: 2px;
+  box-shadow: none !important;
+  background-image: none !important;
 }
+
+#page-title::before,
+#page-title::after,
+.page__title::before,
+.page__title::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. Remove all faint theme borders from H2 headings
+   -------------------------------------------------------------------------- */
+
+.page__content h2,
+.research-section h2 {
+  position: relative !important;
+
+  border: 0 !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. Keep only the blue accent line below H2 headings
+   -------------------------------------------------------------------------- */
+
+.page__content h2::before,
+.research-section h2::before {
+  display: none !important;
+  content: none !important;
+}
+
+.page__content h2::after,
+.research-section h2::after {
+  content: "" !important;
+
+  position: absolute !important;
+  left: 0 !important;
+  bottom: 0 !important;
+
+  display: block !important;
+
+  width: 630px !important;
+  max-width: 100% !important;
+  height: 3px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: #2a7ab9 !important;
+  border: 0 !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   4. Remove separators between Research page sections
+   -------------------------------------------------------------------------- */
+
+.research-section,
+.research-section + .research-section {
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+.research-section::before,
+.research-section::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   5. Remove HR elements used between the three main Research sections
+   -------------------------------------------------------------------------- */
+
+.page__content > hr,
+.research-section > hr,
+.research-section + hr,
+hr + .research-section {
+  display: none !important;
+
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   6. Responsive heading spacing
+   -------------------------------------------------------------------------- */
 
 @media screen and (max-width: 1199px) {
 
-  .page__content h2 {
+  .page__content h2,
+  .research-section h2 {
     margin-top: 1rem !important;
     margin-bottom: 0.75rem !important;
     padding-bottom: 0.35rem !important;
+
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .research-section + .research-section {
+    margin-top: 1.5rem !important;
+    padding-top: 0.25rem !important;
+
+    border: 0 !important;
+    box-shadow: none !important;
   }
 }
-
