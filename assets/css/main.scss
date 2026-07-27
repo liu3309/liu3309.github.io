@@ -143,6 +143,8 @@
   .left-nav {
     display: block;
     margin-top: 13rem;
+    width: 105%;
+    max-width: none;
   }
 
   /* Main navigation items */
@@ -180,8 +182,10 @@
   /* Section heading, such as Research */
 
   .left-nav__item--section {
-    margin: 0;
-  }
+    width: 100%;
+    max-width: none;
+}
+
 
   .left-nav__section-title {
     font-weight: 400;
@@ -191,9 +195,10 @@
   /* Permanently visible indented subtabs */
 
   .left-nav__sublist {
-    margin: 0 0 0.6rem;
-    padding-left: 1rem;
-  }
+    width: 100%;
+    max-width: none;
+    padding-left: 1.5rem;
+}
 
   .left-nav__subitem {
     display: block;
@@ -331,6 +336,7 @@
 
   .left-nav__item--section {
     width: 100%;
+    max-width: none;
   }
 
   .left-nav__section-title {
@@ -340,6 +346,8 @@
   .left-nav__sublist {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    max-width: none;
 
     gap: 0.35rem;
     margin: 0;
