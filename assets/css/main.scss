@@ -2245,19 +2245,19 @@ h2#conference-activities::after,
   #sponsored-projects,
   #publications,
   #conference-activities {
-    scroll-margin-top: 240px !important;
+    scroll-margin-top: 340px !important;
   }
 }
 
 /* Phone: the navigation is taller */
 @media screen and (max-width: 700px) {
   html {
-    scroll-padding-top: 360px !important;
+    scroll-padding-top: 460px !important;
   }
 
   #sponsored-projects,
   #publications,
   #conference-activities {
-    scroll-margin-top: 360px !important;
+    scroll-margin-top: 460px !important;
   }
 }
