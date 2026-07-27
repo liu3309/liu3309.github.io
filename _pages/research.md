@@ -91,7 +91,7 @@ This project develops a national framework to assess the necessity and spatial f
 
 
 <section id="publications" class="research-section">
-<div style="height: 2.6rem;"></div>
+<div style="height: 2rem;"></div>
 <h2>Publications</h2>
 <!-- <hr class="section-divider--compact">
 <div class="research-list"> -->
@@ -176,7 +176,7 @@ Gao, Y., &amp; <strong>Liu, J.</strong> (2023). <em>State of Airport Loyalty Pro
 <h2 id="conference-activities">Conference Activities</h2> -->
 
 <section id="conference-activities" class="research-section">
-  <div style="height: 2.6rem;"></div>
+  <div style="height: 2rem;"></div>
   <h2>Conference Activities</h2>
   
 
