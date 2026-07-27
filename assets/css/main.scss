@@ -2281,3 +2281,83 @@ h2#conference-activities::after,
     scroll-margin-top: 500px !important;
   }
 }
+
+
+/* ==========================================================================
+   COLLAPSIBLE MOBILE NAVIGATION
+   ========================================================================== */
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+
+  .masthead {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .masthead__inner-wrap {
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .mobile-nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0.8rem 1rem;
+
+    color: var(--global-masthead-link-color);
+    font: inherit;
+    font-weight: 700;
+    text-align: left;
+
+    background: var(--global-bg-color);
+    border: 0;
+    border-bottom: 1px solid var(--global-border-color);
+
+    cursor: pointer;
+  }
+
+  .mobile-nav-toggle__icon {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  /* Closed by default */
+  #site-nav {
+    display: none !important;
+
+    width: 100% !important;
+    max-height: calc(100vh - 3.2rem);
+
+    margin: 0 !important;
+    padding: 0.5rem 1rem 1rem !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    background: var(--global-bg-color);
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  /* Open state */
+  .masthead.mobile-nav-open #site-nav {
+    display: block !important;
+  }
+
+  body {
+    padding-top: 3.2rem !important;
+  }
+
+  #main {
+    padding-top: 1rem !important;
+  }
+}
