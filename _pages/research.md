@@ -163,8 +163,6 @@ Gao, Y., &amp; <strong>Liu, J.</strong> (2023). <em>State of Airport Loyalty Pro
    rel="noopener">https://ojs.library.okstate.edu/osu/index.php/CARI/article/view/10322/9131</a>
 </p>
 
-</div>
-
 </section>
 
 
