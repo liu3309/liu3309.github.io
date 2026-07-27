@@ -2266,18 +2266,18 @@ h2#conference-activities::after,
 /* Anchor offset for fixed navigation */
 @media screen and (min-width: 1200px) {
   .research-section {
-    scroll-margin-top: 1.6rem !important;
+    scroll-margin-top: 500px !important;
   }
 }
 
 @media screen and (min-width: 701px) and (max-width: 1199px) {
   .research-section {
-    scroll-margin-top: 5rem !important;
+    scroll-margin-top: 500px !important;
   }
 }
 
 @media screen and (max-width: 700px) {
   .research-section {
-    scroll-margin-top: 8rem !important;
+    scroll-margin-top: 500px !important;
   }
 }
