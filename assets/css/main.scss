@@ -578,9 +578,9 @@
    RESEARCH PAGE ANCHOR NAVIGATION
    ========================================================================== */
 
-.research-section {
-  scroll-margin-top: 480px;
-}
+// .research-section {
+//   scroll-margin-top: 480px;
+// }
 
 .research-section + .research-section {
   margin-top: 2rem;
@@ -1501,11 +1501,11 @@ html {
  * Prevent an anchored heading from sitting too close to the top.
  * This applies to the three main Research sections.
  */
-#sponsored-projects,
-#publications,
-#conference-activities {
-  scroll-margin-top: 480px;
-}
+// #sponsored-projects,
+// #publications,
+// #conference-activities {
+//   scroll-margin-top: 480px;
+// }
 
 /* Research submenu links */
 .left-nav__subitem > a[data-research-section] {
@@ -2216,18 +2216,48 @@ h2#conference-activities::after,
 
 }
 
-@media screen and (min-width:701px) and (max-width:1199px){
 
-  body{
-      padding-top:120px !important;
+
+
+/* ==========================================================================
+   RESEARCH ANCHOR SCROLL POSITION
+   ========================================================================== */
+
+/* Desktop: navigation is on the left, so only a small top margin is needed */
+@media screen and (min-width: 1200px) {
+  html {
+    scroll-padding-top: 2rem !important;
   }
 
+  #sponsored-projects,
+  #publications,
+  #conference-activities {
+    scroll-margin-top: 2rem !important;
+  }
 }
 
-@media screen and (max-width:700px){
-
-  body{
-      padding-top:220px !important;
+/* Tablet: account for the fixed top navigation */
+@media screen and (min-width: 701px) and (max-width: 1199px) {
+  html {
+    scroll-padding-top: 240px !important;
   }
 
+  #sponsored-projects,
+  #publications,
+  #conference-activities {
+    scroll-margin-top: 240px !important;
+  }
+}
+
+/* Phone: the navigation is taller */
+@media screen and (max-width: 700px) {
+  html {
+    scroll-padding-top: 360px !important;
+  }
+
+  #sponsored-projects,
+  #publications,
+  #conference-activities {
+    scroll-margin-top: 360px !important;
+  }
 }
