@@ -1838,3 +1838,48 @@ html {
     padding-top: 1rem !important;
   }
 }
+
+
+
+/* ==========================================================================
+   H2 TITLE DIVIDER — ALL SCREEN SIZES
+   ========================================================================== */
+
+.page__content h2 {
+  position: relative;
+
+  margin-top: 1.75em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+
+  font-size: 1.1em;
+  font-weight: 700;
+
+  border-bottom: 1px solid #d5dce5;
+}
+
+.page__content h2::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+
+  width: 630px;
+  max-width: 100%;
+
+  height: 3px;
+
+  background: #2a7ab9;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 1199px) {
+
+  .page__content h2 {
+    margin-top: 1rem !important;
+    margin-bottom: 0.75rem !important;
+    padding-bottom: 0.35rem !important;
+  }
+}
+
