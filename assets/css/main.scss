@@ -389,6 +389,26 @@
   }
 }
 
+
+@media screen and (max-width: 700px) {
+
+  .left-nav__sublist {
+    display: block;
+    padding-left: 1.5rem;
+  }
+
+  .left-nav__subitem {
+    width: 100%;
+  }
+
+  .left-nav__subitem > a,
+  .left-nav__subitem > a.active,
+  .left-nav__subitem > a:hover {
+    width: calc(100% - 1rem);
+    max-width: none;
+  }
+}
+
 /* ==========================================================================
    ABOUT PAGE PROFILE
    ========================================================================== */
