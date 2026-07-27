@@ -404,9 +404,15 @@
   .left-nav__subitem > a,
   .left-nav__subitem > a.active,
   .left-nav__subitem > a:hover {
-    width: calc(100% - 1rem);
-    max-width: none;
-  }
+    display: block;
+    width: 100%;
+
+    padding: 0.45rem 1rem;
+    box-sizing: border-box;
+
+    font-size: 0.9em;
+    opacity: 1;
+}
 }
 
 /* ==========================================================================
