@@ -1256,6 +1256,11 @@ body {
     border-bottom: 1px solid var(--global-border-color) !important;
 
     z-index: 9999 !important;
+
+    body {
+    padding-top: 220px !important;
+  }
+    
 }
 
 
@@ -2204,4 +2209,9 @@ h2#conference-activities::after,
   .left-nav {
     background: transparent !important;
   }
+
+  body {
+    padding-top: 110px !important;
+  }
+
 }
