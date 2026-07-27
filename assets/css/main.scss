@@ -1761,54 +1761,14 @@ html {
 }
 
 
-
-/* ==========================================================================
-   REMOVE LARGE TOP GAP ON TABLET AND MOBILE
-   ========================================================================== */
-
+/* Remove top content gap whenever navigation is across the top */
 @media screen and (max-width: 1199px) {
-
-  /* Remove the desktop-sized blank space above page content */
-  body .initial-content {
-    padding-top: 1rem !important;
+  html body .initial-content {
+    padding-top: 0 !important;
   }
 
-  body #main {
+  html body #main {
     margin-top: 0 !important;
-  }
-
-  /* Reduce blank space around the top navigation */
-  .masthead__inner-wrap {
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
-  }
-
-  /* Reduce space below the site title */
-  .left-nav__item--title {
-    margin-bottom: 0 !important;
-  }
-
-  /* Reduce space around the line below JIAYU LIU */
-  .left-nav__divider {
-    margin-top: 0.4rem !important;
-    margin-bottom: 0.6rem !important;
+    padding-top: 0 !important;
   }
 }
-
-@media screen and (max-width: 700px) {
-
-  body .initial-content {
-    padding-top: 0.5rem !important;
-  }
-
-  .masthead__inner-wrap {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-  }
-
-  .left-nav__divider {
-    margin-top: 0.3rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-}
-
