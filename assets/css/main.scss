@@ -2361,3 +2361,30 @@ h2#conference-activities::after,
     padding-top: 1rem !important;
   }
 }
+
+
+
+.greedy-nav__toggle .visually-hidden,
+.greedy-nav__toggle .nav__icon + span {
+    display: none !important;
+}
+
+.greedy-nav__toggle {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #444 !important;   
+    border: none;
+    border-radius: 6px;           
+
+    color: #fff !important;
+}
+
+/* Optional: darker on hover */
+.greedy-nav__toggle:hover {
+    background: #2d2d2d !important;
+}
