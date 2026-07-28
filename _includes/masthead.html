@@ -244,7 +244,7 @@ window.addEventListener(
     if (
       window.innerWidth <= 700 &&
       masthead.classList.contains("mobile-nav-open") &&
-      Math.abs(window.scrollY - lastScrollY) > 20
+      Math.abs(window.scrollY - lastScrollY) > 5
     ) {
       closeMobileNavigation();
     }
