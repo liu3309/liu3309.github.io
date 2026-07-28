@@ -235,5 +235,24 @@ document.addEventListener("DOMContentLoaded", function () {
       closeMobileNavigation();
     }
   });
+
+let lastScrollY = window.scrollY;
+
+window.addEventListener(
+  "scroll",
+  function () {
+    if (
+      window.innerWidth <= 700 &&
+      masthead.classList.contains("mobile-nav-open") &&
+      Math.abs(window.scrollY - lastScrollY) > 20
+    ) {
+      closeMobileNavigation();
+    }
+
+    lastScrollY = window.scrollY;
+  },
+  { passive: true }
+);
+  
 });
 </script>
