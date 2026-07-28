@@ -188,71 +188,125 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+  const tabletMobileBreakpoint = 1199;
+
   const masthead = document.querySelector(".masthead");
   const toggle = document.querySelector(".mobile-nav-toggle");
   const navigation = document.getElementById("site-nav");
 
   if (!masthead || !toggle || !navigation) return;
 
-  function closeMobileNavigation() {
-    masthead.classList.remove("mobile-nav-open");
-    toggle.setAttribute("aria-expanded", "false");
 
-    const icon = toggle.querySelector(".mobile-nav-toggle__icon");
+  function isTabletOrMobile() {
+    return window.innerWidth <= tabletMobileBreakpoint;
+  }
+
+
+  function closeNavigation() {
+    masthead.classList.remove("mobile-nav-open");
+
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation");
+
+    const icon = toggle.querySelector(
+      ".mobile-nav-toggle__icon"
+    );
 
     if (icon) {
       icon.textContent = "☰";
     }
   }
 
+
+  function openNavigation() {
+    masthead.classList.add("mobile-nav-open");
+
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Close navigation");
+
+    const icon = toggle.querySelector(
+      ".mobile-nav-toggle__icon"
+    );
+
+    if (icon) {
+      icon.textContent = "✕";
+    }
+  }
+
+
   toggle.addEventListener("click", function () {
-    const isOpen = masthead.classList.contains("mobile-nav-open");
+    const isOpen =
+      masthead.classList.contains("mobile-nav-open");
 
     if (isOpen) {
-      closeMobileNavigation();
+      closeNavigation();
     } else {
-      masthead.classList.add("mobile-nav-open");
-      toggle.setAttribute("aria-expanded", "true");
-
-      const icon = toggle.querySelector(".mobile-nav-toggle__icon");
-
-      if (icon) {
-        icon.textContent = "✕";
-      }
+      openNavigation();
     }
   });
 
+
+  /* Close after selecting any navigation link */
   navigation.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
-      if (window.innerWidth <= 700) {
-        closeMobileNavigation();
+      if (isTabletOrMobile()) {
+        closeNavigation();
       }
     });
   });
 
-  window.addEventListener("resize", function () {
-    if (window.innerWidth > 700) {
-      closeMobileNavigation();
+
+  /* Close after the user scrolls more than 30 pixels */
+  let menuOpenScrollPosition = window.scrollY;
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (
+        isTabletOrMobile() &&
+        masthead.classList.contains("mobile-nav-open")
+      ) {
+        const scrollDistance = Math.abs(
+          window.scrollY - menuOpenScrollPosition
+        );
+
+        if (scrollDistance > 30) {
+          closeNavigation();
+        }
+      }
+    },
+    { passive: true }
+  );
+
+
+  /* Record the position whenever the menu opens */
+  toggle.addEventListener("click", function () {
+    if (
+      masthead.classList.contains("mobile-nav-open")
+    ) {
+      menuOpenScrollPosition = window.scrollY;
     }
   });
 
-let lastScrollY = window.scrollY;
 
-window.addEventListener(
-  "scroll",
-  function () {
+  /* Reset navigation when moving between screen sizes */
+  window.addEventListener("resize", function () {
+    closeNavigation();
+  });
+
+
+  /* Close the menu when Escape is pressed */
+  document.addEventListener("keydown", function (event) {
     if (
-      window.innerWidth <= 700 &&
-      masthead.classList.contains("mobile-nav-open") &&
-      Math.abs(window.scrollY - lastScrollY) > 2
+      event.key === "Escape" &&
+      masthead.classList.contains("mobile-nav-open")
     ) {
-      closeMobileNavigation();
+      closeNavigation();
+      toggle.focus();
     }
+  });
 
-    lastScrollY = window.scrollY;
-  },
-  { passive: true }
-);
-  
+
+  closeNavigation();
 });
 </script>
