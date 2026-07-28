@@ -2305,32 +2305,33 @@ h2#conference-activities::after,
   }
 
   .mobile-nav-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 
-  width: 38px;
-  height: 38px;
-  padding: 0;
+    width: 34px !important;
+    height: 34px !important;
 
-  background: #4b5563;
-  border: none;
-  border-radius: 8px; 
+    margin: 0.6rem 0.75rem 0.6rem auto;
+    padding: 0 !important;
 
-  color: #fff;
-  cursor: pointer;
+    background-color: #808080 !important;
+    border: 0 !important;
+    border-radius: 6px !important;
 
-  transition: background 0.2s ease;
-}
+    color: #fff !important;
+    font: inherit;
+    cursor: pointer;
+  }
 
-.mobile-nav-toggle:hover {
-  background: #2d2d2d;
-}
+  .mobile-nav-toggle:hover {
+    background-color: #666 !important;
+  }
 
-.mobile-nav-toggle__icon {
-  font-size: 1.4rem;
-  line-height: 1;
-}
+  .mobile-nav-toggle__icon {
+    font-size: 1.15rem;
+    line-height: 1;
+  }
 
   /* Closed by default */
   #site-nav {
