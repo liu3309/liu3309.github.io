@@ -21,6 +21,7 @@ author_profile: false
 <strong>Course Overview:</strong> This course builds a framework to understand the basics of the aviation industry. Students will study the history and the current status of aerospace manufacturers, commercial airlines, general aviation, and the domestic and international aviation regulatory framework. This course aims to discuss a broad contextual background of both early and modern air transportation, resulting in awareness of “how” and “why” the global air transportation system looks and operates as it does today. The course also gives students an introductory glimpse at some of the latest trends and efforts in modernizing the future aviation.
 </p>
 
+<div style="height: 2rem;"></div>
 <h3>AT 546 - Aviation Financial Instruments and Operations (Graduate)</h3>
 
 <p class="research-entry">
