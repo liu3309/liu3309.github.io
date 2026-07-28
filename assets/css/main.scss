@@ -2371,14 +2371,14 @@ h2#conference-activities::after,
 }
 
 .greedy-nav__toggle {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: #4b5563 !important;   
+    background: #d3d3d3 !important;   
     border: none;
     border-radius: 9px;           
 
@@ -2387,5 +2387,5 @@ h2#conference-activities::after,
 
 /* Optional: darker on hover */
 .greedy-nav__toggle:hover {
-    background: #4b5563 !important;
+    background: #d3d3d3 !important;
 }
