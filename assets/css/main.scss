@@ -1,3 +1,569 @@
+ChatGPT Plus
+
+
+
+
+Yesterday 8:59 PM
+7b77df9c-8443-4b32-97ee-63d780fb2c04.png
+ef9d48ce-93a2-427d-b0c8-e1a4ff70f8d2.png
+ecd21a56-64e8-45f9-bda0-ae7edc1f0d80.png
+for my acrp gra paper, what classification you recommond to select
+
+f47a878d-0eac-4468-aaa5-66e27636910f.png
+ those are all classifications can be used related to airport
+
+Today 12:21 AM
+
+Pasted text(64).txt
+Document
+i want to delete the "menu" text, keep the icon, but with a square darker background. 
+
+It is not changing because a later .mobile-nav-toggle rule still sets:
+
+width: 100%;
+padding: 0.8rem 1rem;
+justify-content: space-between;
+Those properties make the button fill the navigation bar instead of appearing as a small square. 
+
+
+Find the existing .mobile-nav-toggle block near the bottom of your CSS and replace the entire block with this:
+
+@media screen and (max-width: 700px) {
+
+  .mobile-nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px !important;
+    height: 34px !important;
+
+    margin: 0.6rem 0.75rem 0.6rem auto;
+    padding: 0 !important;
+
+    background-color: #808080 !important;
+    border: 0 !important;
+    border-radius: 6px !important;
+
+    color: #fff !important;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .mobile-nav-toggle:hover {
+    background-color: #666 !important;
+  }
+
+  .mobile-nav-toggle__icon {
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+}
+The important changes are:
+
+width: 34px !important;
+height: 34px !important;
+padding: 0 !important;
+justify-content: center;
+margin-left: auto;
+margin-left: auto places the button on the right side.
+
+Also make sure your HTML no longer contains the visible Menu text:
+
+<button
+  class="mobile-nav-toggle"
+  type="button"
+  aria-expanded="false"
+  aria-controls="site-nav"
+  aria-label="Menu"
+>
+  <span class="mobile-nav-toggle__icon" aria-hidden="true">☰</span>
+</button>
+After changing the CSS, restart Jekyll and force-refresh the browser with:
+
+Ctrl + Shift + R
+Do not add another separate .mobile-nav-toggle block. Replace the old block that currently contains width: 100%.
+
+
+
+Pasted text(65).txt
+Document
+make the tablet same as mobile, have the folded navigation bar at the top. give me full copyable code. 
+
+Your current tablet rules force .left-nav to remain visible, while the collapsible behavior only applies at 700px. To make tablets behave like mobile, use the same breakpoint—1199px—for the button, hidden menu, opening behavior, link layout, and JavaScript. 
+
+
+1. Add this at the very bottom of main.scss
+This block is designed to override the earlier tablet and mobile navigation rules.
+
+/* ==========================================================================
+   COLLAPSIBLE NAVIGATION FOR TABLET AND MOBILE
+   Applies to all screens below the desktop breakpoint
+   ========================================================================== */
+
+/* Hide the menu button on desktop */
+.mobile-nav-toggle {
+  display: none;
+}
+
+
+/* Tablet and mobile */
+@media screen and (max-width: 1199px) {
+
+  /* Fixed top navigation container */
+  .masthead {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: rgba(250, 250, 248, 0.96) !important;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--global-border-color) !important;
+
+    overflow: visible !important;
+    z-index: 9999 !important;
+  }
+
+
+  /* Top bar containing the button */
+  .masthead__inner-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+  /* Small square hamburger button */
+  .mobile-nav-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: flex-end !important;
+
+    width: 34px !important;
+    min-width: 34px !important;
+    max-width: 34px !important;
+
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+
+    margin: 0.65rem 0.75rem !important;
+    padding: 0 !important;
+
+    background-color: #808080 !important;
+    background-image: none !important;
+
+    border: 0 !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+
+    color: #fff !important;
+    font: inherit;
+    line-height: 1 !important;
+
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+
+  .mobile-nav-toggle:hover {
+    background-color: #666 !important;
+  }
+
+
+  .mobile-nav-toggle:active {
+    transform: scale(0.96);
+  }
+
+
+  .mobile-nav-toggle:focus-visible {
+    outline: 2px solid #2a7ab9;
+    outline-offset: 2px;
+  }
+
+
+  .mobile-nav-toggle__icon {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    color: #fff !important;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+
+  /* Navigation is folded by default */
+  #site-nav,
+  .left-nav {
+    display: none !important;
+
+    position: static !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    height: auto !important;
+    max-height: calc(100vh - 60px);
+
+    margin: 0 !important;
+    padding: 0.25rem 0.75rem 1rem !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    background: var(--global-bg-color) !important;
+  }
+
+
+  /* Show navigation when the button is opened */
+  .masthead.mobile-nav-open #site-nav,
+  .masthead.mobile-nav-open .left-nav {
+    display: block !important;
+  }
+
+
+  /* Navigation list */
+  .left-nav__list {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    list-style: none !important;
+  }
+
+
+  /* Main navigation rows */
+  .left-nav__item,
+  .left-nav__item--section,
+  .left-nav__item--title {
+    display: block !important;
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+  /* Site title */
+  .left-nav__item--title {
+    margin-bottom: 0.4rem !important;
+  }
+
+
+  .left-nav__item--title > a {
+    display: block !important;
+    width: 100% !important;
+
+    padding: 0.6rem 0 !important;
+  }
+
+
+  /* Divider beneath site title */
+  .left-nav__divider {
+    display: block !important;
+
+    width: 100% !important;
+    height: 0 !important;
+
+    margin: 0.35rem 0 0.65rem !important;
+
+    border: 0 !important;
+    border-top: 2px solid #1f4e79 !important;
+  }
+
+
+  /* Main links */
+  .left-nav__item:not(.left-nav__item--title) > a,
+  .left-nav__section-title {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0.55rem 0.75rem !important;
+
+    box-sizing: border-box !important;
+
+    border-left: 2px solid transparent;
+  }
+
+
+  /* Research submenu */
+  .left-nav__sublist {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 0 0.4rem !important;
+    padding: 0 0 0 1rem !important;
+
+    list-style: none !important;
+  }
+
+
+  .left-nav__subitem {
+    display: block !important;
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+  .left-nav__subitem > a,
+  .left-nav__subitem > a.active,
+  .left-nav__subitem > a:hover {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    padding: 0.45rem 0.75rem !important;
+
+    box-sizing: border-box !important;
+  }
+
+
+  /* Prevent page content from hiding behind the closed top bar */
+  body {
+    padding-top: 58px !important;
+  }
+
+
+  .initial-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+
+  #main {
+    margin-top: 0 !important;
+  }
+}
+
+
+/* Desktop navigation remains unchanged */
+@media screen and (min-width: 1200px) {
+
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+
+  #site-nav,
+  .left-nav {
+    display: block !important;
+  }
+}
+2. Use this complete mobile-navigation script
+Replace your existing second navigation <script> block with this:
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const tabletMobileBreakpoint = 1199;
+
+  const masthead = document.querySelector(".masthead");
+  const toggle = document.querySelector(".mobile-nav-toggle");
+  const navigation = document.getElementById("site-nav");
+
+  if (!masthead || !toggle || !navigation) return;
+
+
+  function isTabletOrMobile() {
+    return window.innerWidth <= tabletMobileBreakpoint;
+  }
+
+
+  function closeNavigation() {
+    masthead.classList.remove("mobile-nav-open");
+
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation");
+
+    const icon = toggle.querySelector(
+      ".mobile-nav-toggle__icon"
+    );
+
+    if (icon) {
+      icon.textContent = "☰";
+    }
+  }
+
+
+  function openNavigation() {
+    masthead.classList.add("mobile-nav-open");
+
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Close navigation");
+
+    const icon = toggle.querySelector(
+      ".mobile-nav-toggle__icon"
+    );
+
+    if (icon) {
+      icon.textContent = "✕";
+    }
+  }
+
+
+  toggle.addEventListener("click", function () {
+    const isOpen =
+      masthead.classList.contains("mobile-nav-open");
+
+    if (isOpen) {
+      closeNavigation();
+    } else {
+      openNavigation();
+    }
+  });
+
+
+  /* Close after selecting any navigation link */
+  navigation.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (isTabletOrMobile()) {
+        closeNavigation();
+      }
+    });
+  });
+
+
+  /* Close after the user scrolls more than 30 pixels */
+  let menuOpenScrollPosition = window.scrollY;
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (
+        isTabletOrMobile() &&
+        masthead.classList.contains("mobile-nav-open")
+      ) {
+        const scrollDistance = Math.abs(
+          window.scrollY - menuOpenScrollPosition
+        );
+
+        if (scrollDistance > 30) {
+          closeNavigation();
+        }
+      }
+    },
+    { passive: true }
+  );
+
+
+  /* Record the position whenever the menu opens */
+  toggle.addEventListener("click", function () {
+    if (
+      masthead.classList.contains("mobile-nav-open")
+    ) {
+      menuOpenScrollPosition = window.scrollY;
+    }
+  });
+
+
+  /* Reset navigation when moving between screen sizes */
+  window.addEventListener("resize", function () {
+    closeNavigation();
+  });
+
+
+  /* Close the menu when Escape is pressed */
+  document.addEventListener("keydown", function (event) {
+    if (
+      event.key === "Escape" &&
+      masthead.classList.contains("mobile-nav-open")
+    ) {
+      closeNavigation();
+      toggle.focus();
+    }
+  });
+
+
+  closeNavigation();
+});
+</script>
+3. Make sure the button HTML is this
+<button
+  class="mobile-nav-toggle"
+  type="button"
+  aria-expanded="false"
+  aria-controls="site-nav"
+  aria-label="Open navigation"
+>
+  <span
+    class="mobile-nav-toggle__icon"
+    aria-hidden="true"
+  >
+    ☰
+  </span>
+</button>
+The key change is that every collapsible-navigation condition now uses 1199px, matching your existing desktop breakpoint. Your stylesheet already treats screens up to 1199px as tablet/mobile layouts, so this keeps the responsive behavior consistent. 
+
+
+After saving, restart Jekyll and hard-refresh:
+
+Ctrl + Shift + R
+
+
+Pasted text(66).txt
+Document
+carefully clean my main. scss there are too many useless things. 
+
+Worked for 1m 36s
+I carefully consolidated the repeated desktop, tablet, mobile, navigation, spacing, footer, heading, and divider rules. The cleaned file was reduced from about 2,658 lines to 1,394 lines, while preserving the main page styling and the new folded navigation for both tablets and phones.
+
+main-cleaned.scss
+
+Replace your current assets/css/main.scss with this file. Keep a backup of the existing version first.
+
+The cleaned version retains the required Jekyll front matter and import order at the beginning of the file. 
+
+
+After replacing it, restart Jekyll:
+
+bundle exec jekyll serve
+Then force-refresh the page:
+
+Ctrl + Shift + R
+
+Library
+/
+main-cleaned.scss
+
+
 ---
 ---
 
@@ -42,11 +608,62 @@
 ;
 
 
+
 /* ==========================================================================
-   CUSTOM LEFT NAVIGATION
+   VARIABLES AND GLOBAL RESETS
    ========================================================================== */
 
-/* Shared navigation styles */
+:root {
+  --sidebar-width: clamp(210px, 16vw, 250px);
+  --content-gap: clamp(2rem, 8vw, 11rem);
+  --tablet-gap: clamp(1rem, 3vw, 1.75rem);
+  --mobile-gap: 0.8rem;
+  --global-bg-color: #fafaf8;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.initial-content {
+  flex: 1;
+}
+
+.page__footer {
+  margin-top: auto !important;
+  flex-shrink: 0;
+}
+
+.page__footer-follow,
+.page__footer a[href*="sitemap"] {
+  display: none !important;
+}
+
+
+
+/* ==========================================================================
+   NAVIGATION: SHARED
+   ========================================================================== */
 
 .left-nav,
 .left-nav__list,
@@ -79,34 +696,52 @@
   color: var(--global-masthead-link-color-hover);
 }
 
+.left-nav__divider,
 .left-nav hr,
+.masthead hr,
+.sidebar hr,
 .sidebar-divider {
-    border: 0;
-    border-top: 2px solid #2a7ab9;
-}
-
-
-.left-nav__divider {
   width: 100%;
   height: 0;
+  border: 0 !important;
+  border-top: 2px solid #1f4e79 !important;
+  opacity: 1 !important;
+}
+
+.left-nav__divider {
   margin: 0.75rem 0 1rem;
-  border-top: 2px solid #1f4e79;
+}
+
+.left-nav__section-title {
+  cursor: pointer;
+}
+
+.mobile-nav-toggle {
+  display: none;
 }
 
 
 /* ==========================================================================
-   DESKTOP LAYOUT
+   DESKTOP
    ========================================================================== */
 
 @media screen and (min-width: 1200px) {
 
-  /* Fixed navigation panel on the left */
+  /* --------------------------------------------------------------------------
+     Fixed left sidebar
+     -------------------------------------------------------------------------- */
 
   .masthead {
     position: fixed !important;
+
     top: 0 !important;
     left: 0 !important;
     right: auto !important;
+    bottom: auto !important;
+
+    width: var(--sidebar-width) !important;
+    min-width: var(--sidebar-width) !important;
+    max-width: var(--sidebar-width) !important;
 
     height: 100vh !important;
 
@@ -114,6 +749,7 @@
     padding: 0 !important;
 
     background: var(--global-bg-color) !important;
+
     border-right: 2.5px solid var(--global-border-color) !important;
     border-bottom: 0 !important;
 
@@ -123,94 +759,367 @@
     z-index: 1000 !important;
   }
 
+
+  /* Inner sidebar container */
+
   .masthead__inner-wrap {
+    display: block !important;
+
     width: 100% !important;
+    min-width: 0 !important;
     max-width: none !important;
+
     min-height: 100% !important;
 
     margin: 0 !important;
-    padding: 6rem 1.5rem 2rem !important;
+    padding: 5rem 1.25rem 1.25rem !important;
   }
+
+
+  /* Navigation fills the sidebar */
 
   .left-nav {
-    display: block;
-    margin-top: 13rem;
+    position: static !important;
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: visible !important;
   }
 
-  /* Main navigation items */
 
-  .left-nav__item {
-    display: block;
-    width: 100%;
+  /* --------------------------------------------------------------------------
+     Outer page container
+     -------------------------------------------------------------------------- */
+
+  .initial-content {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
-  .left-nav__item > a,
-  .left-nav__section-title {
-    display: block;
-    width: 100%;
 
+  /* --------------------------------------------------------------------------
+     Main page content
+     -------------------------------------------------------------------------- */
+
+  #main {
+    display: block !important;
+    float: none !important;
+
+    /*
+     * The left margin reserves space for the sidebar.
+     * Width auto fills the remaining browser space.
+     */
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: var(--sidebar-width) !important;
+    margin-right: 0 !important;
+
+    padding-left: var(--content-gap) !important;
+    padding-right: var(--content-gap) !important;
+  }
+
+
+  /* Remove theme width restrictions */
+
+  .page {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+
+  .page__inner-wrap {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+
+  .page__content {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
+  /* --------------------------------------------------------------------------
+     Full-width footer beside sidebar
+     -------------------------------------------------------------------------- */
+
+  .page__footer {
+    position: relative !important;
+    display: block !important;
+
+    float: none !important;
+    clear: both !important;
+
+    /*
+     * Use viewport width here rather than the footer parent's width.
+     * This prevents the footer from shrinking to its text.
+     */
+
+    left: var(--sidebar-width) !important;
+
+    width: calc(100vw - var(--sidebar-width)) !important;
+    min-width: calc(100vw - var(--sidebar-width)) !important;
+    max-width: calc(100vw - var(--sidebar-width)) !important;
+
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+
+    padding: 0 !important;
+
+    background: var(--global-footer-bg-color) !important;
+  }
+
+
+  /* Remove the theme's centered footer width */
+
+  .page__footer footer {
+    position: static !important;
+    display: block !important;
+
+    float: none !important;
+    clear: both !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding-top: 0 !important;
+    padding-right: var(--content-gap) !important;
+    padding-bottom: 0 !important;
+    padding-left: var(--content-gap) !important;
+  }
+
+
+  /* Copyright line */
+
+  .page__footer-copyright {
+    position: static !important;
+    display: block !important;
+
+    float: none !important;
+    clear: both !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 1.5rem 0 !important;
+
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+
+    text-align: left !important;
+  }
+}
+
+
+
+/* ==========================================================================
+   TABLET AND MOBILE: COLLAPSIBLE TOP NAVIGATION
+   ========================================================================== */
+
+@media screen and (max-width: 1199px) {
+  .masthead {
+    position: fixed !important;
+    inset: 0 0 auto 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: rgba(250, 250, 248, 0.96) !important;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--global-border-color) !important;
+    overflow: visible !important;
+    z-index: 9999 !important;
+  }
+
+  .masthead__inner-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .mobile-nav-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: flex-end !important;
+    width: 34px !important;
+    min-width: 34px !important;
+    max-width: 34px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+    margin: 0.65rem 0.75rem !important;
+    padding: 0 !important;
+    color: #fff !important;
+    font: inherit;
+    line-height: 1 !important;
+    background: #808080 !important;
+    border: 0 !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .mobile-nav-toggle:hover {
+    background: #666 !important;
+  }
+
+  .mobile-nav-toggle:active {
+    transform: scale(0.96);
+  }
+
+  .mobile-nav-toggle:focus-visible {
+    outline: 2px solid #2a7ab9;
+    outline-offset: 2px;
+  }
+
+  .mobile-nav-toggle__icon {
+    display: block;
     margin: 0;
-    padding: 0.6rem 0;
-
-    line-height: 1.35;
+    padding: 0;
+    color: #fff !important;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1;
   }
 
-  /* Website title */
+  #site-nav,
+  .left-nav {
+    display: none !important;
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: calc(100vh - 58px);
+    margin: 0 !important;
+    padding: 0.25rem 0.75rem 1rem !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    background: var(--global-bg-color) !important;
+  }
+
+  .masthead.mobile-nav-open #site-nav,
+  .masthead.mobile-nav-open .left-nav {
+    display: block !important;
+  }
+
+  .left-nav__list,
+  .left-nav__item,
+  .left-nav__item--section,
+  .left-nav__item--title,
+  .left-nav__subitem {
+    display: block !important;
+    width: 100% !important;
+  }
 
   .left-nav__item--title {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.4rem !important;
   }
 
-.left-nav__item--title > a {
-  font-weight: 560;
-}
-
-.left-nav__item--title > a.active {
-  font-weight: 700;
-}
-
-  /* Section heading, such as Research */
-
-  .left-nav__item--section {
-    margin: 0;
+  .left-nav__item--title > a {
+    display: block !important;
+    width: 100% !important;
+    padding: 0.6rem 0 !important;
   }
 
+  .left-nav__divider {
+    margin: 0.35rem 0 0.65rem !important;
+  }
+
+  .left-nav__item:not(.left-nav__item--title) > a,
   .left-nav__section-title {
-    font-weight: 400;
-    cursor: default;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0.55rem 0.75rem !important;
+    border-left: 2px solid transparent;
   }
-
-  /* Permanently visible indented subtabs */
 
   .left-nav__sublist {
-    margin: 0 0 0.6rem;
-    padding-left: 1rem;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 0.4rem !important;
+    padding: 0 0 0 1rem !important;
   }
 
-  .left-nav__subitem {
-    display: block;
-    width: 100%;
-  }
-
-  .left-nav__subitem > a {
-    display: block;
-    width: 100%;
-
-    padding: 0.35rem 0;
-
-    font-size: 0.9em;
-    line-height: 1.35;
-    opacity: 0.85;
-  }
-
+  .left-nav__subitem > a,
+  .left-nav__subitem > a.active,
   .left-nav__subitem > a:hover {
-    opacity: 1;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.45rem 0.75rem !important;
   }
-
-  /* Theme toggle */
 
   .left-nav__item--theme {
-    margin-top: 0.75rem;
+    margin-left: 0;
   }
 
   .theme-toggle-button,
@@ -219,201 +1128,130 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
-    width: 100%;
-
     margin: 0;
-    padding: 0.6rem 0;
-
+    padding: 0.55rem 0.75rem;
     color: var(--global-masthead-link-color);
     font: inherit;
-    text-decoration: none;
-
     background: transparent;
     border: 0;
-
     cursor: pointer;
   }
 
-  .theme-toggle-button:hover,
-  #theme-toggle > a:hover,
-  #theme-toggle > button:hover {
-    color: var(--global-masthead-link-color-hover);
+  body {
+    padding-top: 58px !important;
   }
 
-  /* Remove space formerly reserved for the top masthead */
+  .initial-content {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-  body {
+  #main {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding-top: 1rem !important;
+    padding-right: var(--tablet-gap) !important;
+    padding-left: var(--tablet-gap) !important;
+  }
+
+  .page,
+  .page__inner-wrap,
+  .page__content {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .page__inner-wrap > header,
+  .page__header {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .page__title,
+  #page-title {
+    margin: 0 0 0.75rem !important;
+    padding: 0 !important;
+  }
+
+  .page__content {
+    margin-top: 0 !important;
     padding-top: 0 !important;
   }
 
-
-  .page,
-  .page__inner-wrap {
-  max-width: 1500px;
-}
-  .page__content {
-    margin-top: 0 !important;
-  }
-// .page__content h2 {
-//   position: relative;
-//   margin-top: 1.75em;
-//   margin-bottom: 1em;
-//   padding-bottom: 0.5em;
-//   font-size: 1.1em;
-//   font-weight: 700;
-//   border-bottom: 1px solid #d5dce5;
-// }
-
-// .page__content h2::after {
-//   content: "";
-//   position: absolute;
-//   left: 0;
-//   bottom: -2px;
-//   width: 630px;
-//   height: 3px;
-//   background: #2a7ab9;
-//   border-radius: 2px;
-// }
-
-.page__content h3 {
-  margin-top: 1.75rem;
-  margin-bottom: 0.6rem;
-  font-size: 0.95rem;
-  font-weight: 660;
-  color: var(--global-text-color);
-}
-}
-
-
-/* ==========================================================================
-   TABLET AND MOBILE NAVIGATION
-   ========================================================================== */
-
-@media screen and (max-width: 1199px) {
-
-  .masthead {
-    position: fixed !important;
-    top: 0 !important;
+  .page__footer {
+    position: relative !important;
     left: 0 !important;
-    right: 0 !important;
-
     width: 100% !important;
-    height: auto !important;
-
+    min-width: 0 !important;
+    max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
-
-    background: rgba(250, 250, 248, 0.90) !important;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
-    border-bottom: 1px solid var(--global-border-color) !important;
-
-    z-index: 9999 !important;
-}
-
-  .masthead__inner-wrap {
-    width: 100%;
-    max-width: none;
-
-    margin: 0 auto;
-    padding: 0.75rem 1rem;
+    background: var(--global-footer-bg-color) !important;
   }
 
-  .left-nav__item--section {
-    width: 100%;
+  .page__footer footer {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding-right: var(--tablet-gap) !important;
+    padding-left: var(--tablet-gap) !important;
   }
 
-  .left-nav__section-title {
-    font-weight: 400;
+  .page__footer-copyright {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1.5rem 0 !important;
+    text-align: left !important;
   }
 
-  .left-nav__sublist {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 0.35rem;
-    margin: 0;
-    padding-left: 1.5rem;
-  }
-
-  .left-nav__subitem {
-    flex: 0 0 auto;
-  }
-
-  .left-nav__subitem > a {
-    display: block;
-    width: 15rem;
-
-    padding: 0.45rem 1rem;
-
-    box-sizing: border-box;
-    font-size: 0.9em;
-    opacity: 0.85;
-  }
-
-  .left-nav__subitem > a.active,
-  .left-nav__subitem > a:hover {
-    width: 15rem;
-    opacity: 1;
-  }
-
-  .left-nav__item--theme {
-    margin-left: auto;
-  }
-
-  .theme-toggle-button,
-  #theme-toggle > a,
-  #theme-toggle > button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0;
-    padding: 0.45rem;
-
-    color: var(--global-masthead-link-color);
-    font: inherit;
-
-    background: transparent;
-    border: 0;
-
-    cursor: pointer;
-  }
-
-  body,
-  .initial-content,
-  #main {
-    margin-top: 0 !important;
+  .research-section {
+    scroll-margin-top: 80px !important;
   }
 }
-
 
 @media screen and (max-width: 700px) {
-
-  .left-nav__sublist {
-    display: block;
-    padding-left: 1.5rem;
+  #main {
+    padding-right: var(--mobile-gap) !important;
+    padding-left: var(--mobile-gap) !important;
   }
 
-  .left-nav__subitem {
-    width: 100%;
+  .page__footer footer {
+    padding-right: var(--mobile-gap) !important;
+    padding-left: var(--mobile-gap) !important;
   }
 
-  .left-nav__subitem > a,
-  .left-nav__subitem > a.active,
-  .left-nav__subitem > a:hover {
-    display: block;
-    width: 100%;
-
-    padding: 0.45rem 1rem;
-    box-sizing: border-box;
-
-    font-size: 0.9em;
-    opacity: 1;
+  .page__footer-copyright {
+    padding: 1.25rem 0 !important;
+    white-space: normal !important;
+  }
 }
+
+@media screen and (min-width: 1200px) {
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+
+  #site-nav,
+  .left-nav {
+    display: block !important;
+  }
+
+  .research-section {
+    scroll-margin-top: 2rem !important;
+  }
 }
+
 
 /* ==========================================================================
    ABOUT PAGE PROFILE
@@ -795,623 +1633,6 @@
 
 
 
-/* ==========================================================================
-   RESPONSIVE SIDEBAR, MAIN CONTENT, EMBED, AND FOOTER
-   ========================================================================== */
-
-:root {
-  --sidebar-width: clamp(210px, 16vw, 250px);
-  --content-gap: clamp(11rem, 11vw, 6rem);
-
-  /* Smaller tablet side margins */
-  --tablet-gap: clamp(1rem, 3vw, 1.75rem);
-
-  /* Smaller phone side margins */
-  --mobile-gap: 0.8rem;
-
-  --global-bg-color: #fafaf8;
-}
-
-
-/* Prevent width calculations from creating horizontal overflow */
-
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-
-/* Use predictable width calculations */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-
-/* Hide Sitemap and other footer navigation links */
-
-.page__footer-follow,
-.page__footer a[href*="sitemap"] {
-  display: none !important;
-}
-
-
-/* ==========================================================================
-   DESKTOP
-   ========================================================================== */
-
-@media screen and (min-width: 1200px) {
-
-  /* --------------------------------------------------------------------------
-     Fixed left sidebar
-     -------------------------------------------------------------------------- */
-
-  .masthead {
-    position: fixed !important;
-
-    top: 0 !important;
-    left: 0 !important;
-    right: auto !important;
-    bottom: auto !important;
-
-    width: var(--sidebar-width) !important;
-    min-width: var(--sidebar-width) !important;
-    max-width: var(--sidebar-width) !important;
-
-    height: 100vh !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    background: var(--global-bg-color) !important;
-
-    border-right: 2.5px solid var(--global-border-color) !important;
-    border-bottom: 0 !important;
-
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-
-    z-index: 1000 !important;
-  }
-
-
-  /* Inner sidebar container */
-
-  .masthead__inner-wrap {
-    display: block !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    min-height: 100% !important;
-
-    margin: 0 !important;
-    padding: 5rem 1.25rem 1.25rem !important;
-  }
-
-
-  /* Navigation fills the sidebar */
-
-  .left-nav {
-    position: static !important;
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    height: auto !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    overflow: visible !important;
-  }
-
-
-  /* --------------------------------------------------------------------------
-     Outer page container
-     -------------------------------------------------------------------------- */
-
-  .initial-content {
-    display: block !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-
-  /* --------------------------------------------------------------------------
-     Main page content
-     -------------------------------------------------------------------------- */
-
-  #main {
-    display: block !important;
-    float: none !important;
-
-    /*
-     * The left margin reserves space for the sidebar.
-     * Width auto fills the remaining browser space.
-     */
-
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    margin-left: var(--sidebar-width) !important;
-    margin-right: 0 !important;
-
-    padding-left: var(--content-gap) !important;
-    padding-right: var(--content-gap) !important;
-  }
-
-
-  /* Remove theme width restrictions */
-
-  .page {
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-
-  .page__inner-wrap {
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-
-  .page__content {
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-
-  /* --------------------------------------------------------------------------
-     Full-width footer beside sidebar
-     -------------------------------------------------------------------------- */
-
-  .page__footer {
-    position: relative !important;
-    display: block !important;
-
-    float: none !important;
-    clear: both !important;
-
-    /*
-     * Use viewport width here rather than the footer parent's width.
-     * This prevents the footer from shrinking to its text.
-     */
-
-    left: var(--sidebar-width) !important;
-
-    width: calc(100vw - var(--sidebar-width)) !important;
-    min-width: calc(100vw - var(--sidebar-width)) !important;
-    max-width: calc(100vw - var(--sidebar-width)) !important;
-
-    margin-top: 0 !important;
-    margin-right: 0 !important;
-    margin-bottom: 0 !important;
-    margin-left: 0 !important;
-
-    padding: 0 !important;
-
-    background: var(--global-footer-bg-color) !important;
-  }
-
-
-  /* Remove the theme's centered footer width */
-
-  .page__footer footer {
-    position: static !important;
-    display: block !important;
-
-    float: none !important;
-    clear: both !important;
-
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-
-    padding-top: 0 !important;
-    padding-right: var(--content-gap) !important;
-    padding-bottom: 0 !important;
-    padding-left: var(--content-gap) !important;
-  }
-
-
-  /* Copyright line */
-
-  .page__footer-copyright {
-    position: static !important;
-    display: block !important;
-
-    float: none !important;
-    clear: both !important;
-
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-    padding: 1.5rem 0 !important;
-
-    white-space: nowrap !important;
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-
-    text-align: left !important;
-  }
-}
-
-
-/* ==========================================================================
-   TABLET
-   ========================================================================== */
-
-@media screen and (min-width: 701px) and (max-width: 1199px) {
-
-  /* Return sidebar to normal top navigation */
-
-  .masthead {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-
-    width: 100% !important;
-    height: auto !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    background: rgba(250, 250, 248, 0.90) !important;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
-    border-bottom: 1px solid var(--global-border-color) !important;
-
-    z-index: 9999 !important;
-}
-
-
-  .masthead__inner-wrap {
-    width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-    padding: 1rem 0.75rem 1rem !important;
-  }
-
-
-  .left-nav {
-    position: static !important;
-    display: block !important;
-
-    width: 100% !important;
-    height: auto !important;
-
-    margin: 0 !important;
-
-    overflow: visible !important;
-  }
-
-
-  .initial-content {
-    width: 100% !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-
-  #main {
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    padding-left: var(--tablet-gap) !important;
-    padding-right: var(--tablet-gap) !important;
-  }
-
-
-  .page,
-  .page__inner-wrap,
-  .page__content {
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  /* Tablet footer */
-
-  .page__footer {
-    position: relative !important;
-    display: block !important;
-
-    float: none !important;
-    clear: both !important;
-
-    left: 0 !important;
-
-    width: 100vw !important;
-    min-width: 100vw !important;
-    max-width: 100vw !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    background: var(--global-footer-bg-color) !important;
-  }
-
-
-  .page__footer footer {
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-
-    padding-left: var(--tablet-gap) !important;
-    padding-right: var(--tablet-gap) !important;
-  }
-
-
-  .page__footer-copyright {
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-    padding: 1.5rem 0 !important;
-
-    white-space: nowrap !important;
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-
-    text-align: left !important;
-  }
-}
-
-
-/* ==========================================================================
-   SMALL MOBILE
-   ========================================================================== */
-
-@media screen and (max-width: 700px) {
-
-  .masthead {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-
-    width: 100% !important;
-    height: auto !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    background: rgba(250, 250, 248, 0.90) !important;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
-    border-bottom: 1px solid var(--global-border-color) !important;
-
-    z-index: 9999 !important;
-
-    body {
-    padding-top: 360px !important;
-  }
-    
-}
-
-
-  .masthead__inner-wrap {
-    width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-    padding: 1rem 0.75rem 1rem !important;
-  }
-
-
-  .left-nav {
-    position: static !important;
-
-    width: 100% !important;
-    height: auto !important;
-
-    margin: 0 !important;
-
-    overflow: visible !important;
-  }
-
-
-  .initial-content {
-    width: 100% !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-
-  #main {
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    padding-left: var(--mobile-gap) !important;
-    padding-right: var(--mobile-gap) !important;
-  }
-
-
-  .page,
-  .page__inner-wrap,
-  .page__content {
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  /* Mobile footer */
-
-  .page__footer {
-    position: relative !important;
-    display: block !important;
-
-    float: none !important;
-    clear: both !important;
-
-    left: 0 !important;
-
-    width: 100vw !important;
-    min-width: 100vw !important;
-    max-width: 100vw !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    background: var(--global-footer-bg-color) !important;
-  }
-
-
-  .page__footer footer {
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-
-    padding-left: var(--mobile-gap) !important;
-    padding-right: var(--mobile-gap) !important;
-  }
-
-
-  .page__footer-copyright {
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-    padding: 1.25rem 0 !important;
-
-    white-space: normal !important;
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-
-    text-align: left !important;
-  }
-}
-/* ==========================================================================
-   STICKY FOOTER
-   ========================================================================== */
-
-html {
-    height: 100%;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Main site wrapper grows */
-.initial-content {
-    flex: 1;
-}
-
-/* Remove extra bottom spacing */
-#main,
-.page,
-.page__inner-wrap,
-.page__content {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-/* Footer stays after content */
-.page__footer {
-    margin-top: auto !important;
-    flex-shrink: 0;
-}
 
 /* ==========================================================================
    EMBEDDED RESEARCH WEBSITE
@@ -1463,30 +1684,6 @@ body {
         height: 450px;
     }
 }
-
-
-
-
-/* Sidebar divider */
-.left-nav hr,
-.masthead hr,
-.sidebar hr {
-  border: 0 !important;
-  border-top: 2px solid #1f4e79 !important;
-  opacity: 1 !important;
-}
-
-
-.about-profile__name {
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-}
-
-.about-profile__name::after {
-    display: none !important;
-}
-
-
 
 /* ==========================================================================
    RESEARCH SUBNAVIGATION: ANCHORS, SMOOTH SCROLL, AND ACTIVE SECTION
@@ -1594,34 +1791,30 @@ html {
     padding-left 0.2s ease;
 }
 
+
 /* ==========================================================================
-   COMPACT SPACING FOR TABLET & MOBILE
+   RESPONSIVE CONTENT SPACING
    ========================================================================== */
 
 @media screen and (max-width: 1199px) {
-
-  /* Reduce spacing before section headings */
   .page__content h2 {
-    margin-top: 1rem !important;
+    margin-top: 1.25rem !important;
     margin-bottom: 0.75rem !important;
-    padding-bottom: 0.35rem !important;
+    padding-bottom: 0.4rem !important;
   }
 
-  /* Reduce spacing between major sections */
-  .research-section + .research-section {
-    margin-top: 1.5rem !important;
-    padding-top: 0.25rem !important;
-    border-top: none !important;
-  }
-
-  /* Reduce spacing before subsection headings */
   .page__content h3,
   .research-section h3 {
     margin-top: 1rem !important;
     margin-bottom: 0.5rem !important;
   }
 
-  /* Reduce spacing between research entries */
+  .research-section + .research-section {
+    margin-top: 1.5rem !important;
+    padding-top: 0.25rem !important;
+    border-top: 0 !important;
+  }
+
   .research-project {
     margin: 1rem 0 !important;
   }
@@ -1634,174 +1827,30 @@ html {
 
 
 /* ==========================================================================
-   FULL-WIDTH MAIN NAV HIGHLIGHT ON TABLET AND MOBILE
+   ABOUT PAGE RESPONSIVE LAYOUT
    ========================================================================== */
 
 @media screen and (max-width: 1199px) {
-
-  /* Make About, Research, and Teaching use the full row */
-  .left-nav__item:not(.left-nav__item--title):not(.left-nav__item--theme) {
-    width: 100% !important;
-  }
-
-  /* Make the clickable area fill the row */
-  .left-nav__item:not(.left-nav__item--title):not(.left-nav__item--theme) > a,
-  .left-nav__section-title {
-    display: block;
-    width: 110%;
-  }
-
-  /* Keep active and hover backgrounds full width */
-  .left-nav__item:not(.left-nav__item--title):not(.left-nav__item--theme) > a.active,
-  .left-nav__section-title.active,
-  .left-nav__item:not(.left-nav__item--title):not(.left-nav__item--theme) > a:hover,
-  .left-nav__section-title:hover {
-    width: 110%;
-  }
-}
-
-
-/* ==========================================================================
-   FINAL RESPONSIVE TOP-SPACING RESET
-   ========================================================================== */
-
-/*
- * When the left sidebar changes into top navigation, remove every desktop
- * top offset inherited from the theme or older custom rules.
- */
-@media screen and (max-width: 1199px) {
-  html,
-  body {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-  .masthead {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-
-  .initial-content {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-  #main {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-  .page,
-  .page__inner-wrap,
-  .page__content {
-    margin-top: 0 !important;
-    padding-top: 2rem !important;
-  }
-
-  .page__content > :first-child {
-    margin-top: 0 !important;
-  }
-}
-
-
-/* ==========================================================================
-   REMOVE GAP BETWEEN PAGE TITLE AND CONTENT ON LAPTOP, TABLET, AND MOBILE
-   ========================================================================== */
-
-@media screen and (max-width: 1199px) {
-
-  /* Reset the header that contains the generated page title */
-  .page__inner-wrap > header,
-  .page__header,
-  header.page__header {
-    position: static !important;
-    display: block !important;
-    float: none !important;
-
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    transform: none !important;
-  }
-
-  /* Reset the generated "About" title */
-  #page-title,
-  .page__title {
-    position: static !important;
-    display: block !important;
-    float: none !important;
-    clear: none !important;
-
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-
-    margin: 0 0 0.75rem !important;
-    padding: 0 !important;
-
-    transform: none !important;
-  }
-
-  /* Remove spacing between the title header and page content */
-  .page__inner-wrap > header + .page__content,
-  .page__header + .page__content,
-  .page__content {
-    position: static !important;
-    float: none !important;
-    clear: none !important;
-
-    height: auto !important;
-    min-height: 0 !important;
-
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-
-    transform: none !important;
-  }
-
-  /* Reset the About profile itself */
   .about-profile {
     position: static !important;
     display: flex !important;
-
     height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-
     margin: 0 0 1.5rem !important;
     padding: 0 !important;
-
-    transform: none !important;
   }
 
   .about-profile__photo,
   .about-profile__details {
     position: static !important;
-
     height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-
     margin-top: 0 !important;
     padding-top: 0 !important;
-
-    transform: none !important;
   }
 }
 
-
-/* Phone layout */
 @media screen and (max-width: 700px) {
-
   .about-profile {
     display: block !important;
-    margin-top: 0 !important;
   }
 
   .about-profile__photo {
@@ -1809,93 +1858,23 @@ html {
   }
 
   .about-profile__photo img {
-    display: block !important;
-
     width: 140px !important;
     height: 140px !important;
-
-    margin: 0 !important;
-
-    object-fit: cover;
-    border-radius: 50%;
   }
 }
 
-/* ==========================================================================
-   ADD BREATHING ROOM ABOVE NAVIGATION & CONTENT
-   ========================================================================== */
-
-@media screen and (max-width: 1199px) {
-
-  /* Space above the navigation */
-  .masthead__inner-wrap {
-    padding-top: 1.5rem !important;
-  }
-
-  /* Space between navigation and page content */
-  #main {
-    padding-top: 1rem !important;
-  }
-
-  .page__content {
-    padding-top: 2rem !important;
-  }
-}
 
 
 /* ==========================================================================
-   FINAL HEADING AND RESEARCH DIVIDER CONTROL
+   PAGE HEADINGS AND DIVIDERS
    ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   Default H2 appearance
-
-   Remove all inherited/theme dividers first. This prevents lines from
-   appearing under the main page title or unintended Research subtitles.
-   -------------------------------------------------------------------------- */
-
-.page__content h2 {
-  position: relative;
-
-  margin-top: 1.75rem !important;
-  margin-bottom: 1rem !important;
-  padding-bottom: 0.55rem !important;
-
-  font-size: 1.1rem;
-  font-weight: 700;
-
-  border: 0 !important;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-
-  background: transparent !important;
-  background-image: none !important;
-  box-shadow: none !important;
-}
-
-.page__content h2::before,
-.page__content h2::after {
-  content: none !important;
-  display: none !important;
-}
-
-
-/* --------------------------------------------------------------------------
-   Generated page titles
-
-   No divider under Research, About, Teaching, or other generated page titles.
-   -------------------------------------------------------------------------- */
 
 .page__header,
 .page__inner-wrap > header,
 .page__title,
 #page-title {
   border: 0 !important;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-
   background: transparent !important;
-  background-image: none !important;
   box-shadow: none !important;
 }
 
@@ -1907,247 +1886,40 @@ html {
   display: none !important;
 }
 
-
-/* --------------------------------------------------------------------------
-   Research section headings only
-
-   Supports either:
-   1. the ID placed directly on the H2; or
-   2. the ID placed on a wrapper containing the H2.
-   -------------------------------------------------------------------------- */
-
-h2#sponsored-projects,
-h2#publications,
-h2#conference-activities,
-
-#sponsored-projects > h2:first-child,
-#publications > h2:first-child,
-#conference-activities > h2:first-child,
-
-#sponsored-projects h2:first-child,
-#publications h2:first-child,
-#conference-activities h2:first-child {
-  position: relative !important;
-
-  margin-bottom: 1rem !important;
-  padding-bottom: 0.55rem !important;
-
-  border: 0 !important;
-  border-bottom: 1px solid #d5dce5 !important;
-
-  background: transparent !important;
-  background-image: none !important;
-  box-shadow: none !important;
-}
-
-
-/* Blue accent over the full-width light divider */
-
-h2#sponsored-projects::after,
-h2#publications::after,
-h2#conference-activities::after,
-
-#sponsored-projects > h2:first-child::after,
-#publications > h2:first-child::after,
-#conference-activities > h2:first-child::after,
-
-#sponsored-projects h2:first-child::after,
-#publications h2:first-child::after,
-#conference-activities h2:first-child::after {
-  content: "" !important;
-
-  position: absolute !important;
-  left: 0 !important;
-  bottom: -2px !important;
-
-  display: block !important;
-
-  width: 630px !important;
-  max-width: 100% !important;
-  height: 3px !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  background: #2a7ab9 !important;
-  border: 0 !important;
-  border-radius: 2px !important;
-  box-shadow: none !important;
-}
-
-
-/* --------------------------------------------------------------------------
-   Research section separation
-
-   Remove any faint divider between sections while keeping the sections visible.
-   -------------------------------------------------------------------------- */
-
-.research-section,
-.research-section + .research-section,
-#sponsored-projects,
-#publications,
-#conference-activities {
-  border: 0 !important;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-
-  background-image: none !important;
-  box-shadow: none !important;
-}
-
-
-/* Do not hide HR elements; only remove their visual line */
-
-.research-section > hr:not(.research-project__divider),
-.page__content > hr:not(.research-project__divider) {
-  display: block !important;
-
-  width: 100% !important;
-  height: 0 !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  border: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-
-// /* --------------------------------------------------------------------------
-//    Additional space before Publications
-//    -------------------------------------------------------------------------- */
-
-// #publications {
-//   margin-top: 4rem !important;
-//   padding-top: 1rem !important;
-// }
-
-// h2#publications {
-//   margin-top: 4rem !important;
-// }
-
-
-/* --------------------------------------------------------------------------
-   About-page profile name
-
-   Never show a divider beneath the name.
-   -------------------------------------------------------------------------- */
-
-.about-profile__name,
-.about-profile h2 {
-  margin-bottom: 0.4rem !important;
-  padding-bottom: 0 !important;
-
-  border: 0 !important;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-
-  background: transparent !important;
-  background-image: none !important;
-  box-shadow: none !important;
-}
-
-.about-profile__name::before,
-.about-profile__name::after,
-.about-profile h2::before,
-.about-profile h2::after {
-  content: none !important;
-  display: none !important;
-}
-
-
-/* --------------------------------------------------------------------------
-   Tablet and mobile
-   -------------------------------------------------------------------------- */
-
-@media screen and (max-width: 1199px) {
-
-  .page__content h2 {
-    margin-top: 1.25rem !important;
-    margin-bottom: 0.75rem !important;
-  }
-
-  h2#sponsored-projects,
-  h2#publications,
-  h2#conference-activities,
-
-  #sponsored-projects > h2:first-child,
-  #publications > h2:first-child,
-  #conference-activities > h2:first-child,
-
-  #sponsored-projects h2:first-child,
-  #publications h2:first-child,
-  #conference-activities h2:first-child {
-    margin-bottom: 0.75rem !important;
-    padding-bottom: 0.4rem !important;
-  }
-
-  #publications {
-    margin-top: 2rem !important;
-    padding-top: 1rem !important;
-  }
-
-  h2#publications {
-    margin-top: 2rem !important;
-  }
-}
-
-
-
-/* ==========================================================================
-   RESTORE H2 DIVIDERS ON ABOUT AND TEACHING PAGES
-   ========================================================================== */
-
-/*
- * Restore the divider for normal H2 headings.
- * Exclude the About-page profile name.
- */
 .page__content h2:not(.about-profile__name),
 .about-profile__bio h2 {
   position: relative !important;
-
   margin-top: 1.75rem !important;
   margin-bottom: 1rem !important;
   padding-bottom: 0.55rem !important;
-
+  font-size: 1.1rem;
+  font-weight: 700;
   border: 0 !important;
   border-bottom: 1px solid #d5dce5 !important;
-
   background: transparent !important;
-  background-image: none !important;
   box-shadow: none !important;
 }
 
-/* Blue accent line */
 .page__content h2:not(.about-profile__name)::after,
 .about-profile__bio h2::after {
   content: "" !important;
-
   position: absolute !important;
   left: 0 !important;
   bottom: -2px !important;
-
   display: block !important;
-
   width: 630px !important;
   max-width: 100% !important;
   height: 3px !important;
-
   background: #2a7ab9 !important;
   border: 0 !important;
   border-radius: 2px !important;
-  box-shadow: none !important;
 }
 
-/* Keep the profile name completely divider-free */
 .about-profile__name,
 .about-profile h2.about-profile__name {
+  margin-bottom: 0.4rem !important;
   padding-bottom: 0 !important;
-
   border: 0 !important;
-  border-bottom: 0 !important;
-
   background: transparent !important;
   box-shadow: none !important;
 }
@@ -2160,499 +1932,29 @@ h2#conference-activities::after,
   display: none !important;
 }
 
-/* Tablet and mobile spacing */
-@media screen and (max-width: 1199px) {
-  .page__content h2:not(.about-profile__name),
-  .about-profile__bio h2 {
-    margin-top: 1.25rem !important;
-    margin-bottom: 0.75rem !important;
-    padding-bottom: 0.4rem !important;
-  }
+.research-section,
+.research-section + .research-section,
+#sponsored-projects,
+#publications,
+#conference-activities {
+  border: 0 !important;
+  background-image: none !important;
+  box-shadow: none !important;
 }
 
-
-
-/* ==========================================================================
-   FIXED TOP NAVIGATION FOR SHRUNK WINDOWS
-   ========================================================================== */
-
-@media screen and (max-width: 1199px) {
-
-  .masthead {
-    position: fixed !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: auto !important;
-    left: 0 !important;
-
-    display: block !important;
-
-    width: 100% !important;
-    height: auto !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    background: rgba(250, 250, 248, 0.90) !important;
-
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-
-    border-right: 0 !important;
-    border-bottom: 1px solid #d5dce5 !important;
-
-    transform: none !important;
-    z-index: 99999 !important;
-  }
-
-  .masthead__inner-wrap,
-  .left-nav {
-    background: transparent !important;
-  }
-
-  body {
-    padding-top: 240px !important;
-  }
-
+.research-section > hr:not(.research-project__divider),
+.page__content > hr:not(.research-project__divider) {
+  display: block !important;
+  width: 100% !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
-
-
-
-/* ==========================================================================
-   RESEARCH ANCHOR SCROLL POSITION
-   ========================================================================== */
-
-// /* Desktop: navigation is on the left, so only a small top margin is needed */
-// @media screen and (min-width: 1200px) {
-//   html {
-//     scroll-padding-top: 2rem !important;
-//   }
-
-//   #sponsored-projects,
-//   #publications,
-//   #conference-activities {
-//     scroll-margin-top: 2rem !important;
-//   }
-// }
-
-// /* Tablet: account for the fixed top navigation */
-// @media screen and (min-width: 701px) and (max-width: 1199px) {
-//   html {
-//     scroll-padding-top: 240px !important;
-//   }
-
-//   #sponsored-projects,
-//   #publications,
-//   #conference-activities {
-//     scroll-margin-top: 540px !important;
-//   }
-// }
-
-// /* Phone: the navigation is taller */
-// @media screen and (max-width: 700px) {
-//   html {
-//     scroll-padding-top: 460px !important;
-//   }
-
-//   #sponsored-projects,
-//   #publications,
-//   #conference-activities {
-//     scroll-margin-top: 660px !important;
-//   }
-// }
-
-
-/* Anchor offset for fixed navigation */
-@media screen and (min-width: 1200px) {
-  .research-section {
-    scroll-margin-top: 200px !important;
-  }
-}
-
-@media screen and (min-width: 701px) and (max-width: 1199px) {
-  .research-section {
-    scroll-margin-top: 300px !important;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .research-section {
-    scroll-margin-top: 400px !important;
-  }
-}
-
-
-/* ==========================================================================
-   COLLAPSIBLE MOBILE NAVIGATION
-   ========================================================================== */
-
-.mobile-nav-toggle {
-  display: none;
-}
-
-@media screen and (max-width: 700px) {
-
-  .masthead {
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-  }
-
-  .masthead__inner-wrap {
-    padding: 0 !important;
-    min-height: 0 !important;
-  }
-
-  .mobile-nav-toggle {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-
-    width: 34px !important;
-    height: 34px !important;
-
-    margin: 0.6rem 0.75rem 0.6rem auto;
-    padding: 0 !important;
-
-    background-color: #808080 !important;
-    border: 0 !important;
-    border-radius: 6px !important;
-
-    color: #fff !important;
-    font: inherit;
-    cursor: pointer;
-  }
-
-  .mobile-nav-toggle:hover {
-    background-color: #666 !important;
-  }
-
-  .mobile-nav-toggle__icon {
-    font-size: 1.15rem;
-    line-height: 1;
-  }
-
-  /* Closed by default */
-  #site-nav {
-    display: none !important;
-
-    width: 100% !important;
-    max-height: calc(100vh - 3.2rem);
-
-    margin: 0 !important;
-    padding: 0.5rem 1rem 1rem !important;
-
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-
-    background: var(--global-bg-color);
-    border-bottom: 1px solid var(--global-border-color);
-  }
-
-  /* Open state */
-  .masthead.mobile-nav-open #site-nav {
-    display: block !important;
-  }
-
-  body {
-    padding-top: 3.2rem !important;
-  }
-
-  #main {
-    padding-top: 1rem !important;
-  }
-}
-
-/* ==========================================================================
-   COLLAPSIBLE NAVIGATION FOR TABLET AND MOBILE
-   Applies to all screens below the desktop breakpoint
-   ========================================================================== */
-
-/* Hide the menu button on desktop */
-.mobile-nav-toggle {
-  display: none;
-}
-
-
-/* Tablet and mobile */
-@media screen and (max-width: 1199px) {
-
-  /* Fixed top navigation container */
-  .masthead {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    background: rgba(250, 250, 248, 0.96) !important;
-
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
-    border-right: 0 !important;
-    border-bottom: 1px solid var(--global-border-color) !important;
-
-    overflow: visible !important;
-    z-index: 9999 !important;
-  }
-
-
-  /* Top bar containing the button */
-  .masthead__inner-wrap {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-
-    width: 100% !important;
-    max-width: none !important;
-    min-height: 0 !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-
-  /* Small square hamburger button */
-  .mobile-nav-toggle {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    align-self: flex-end !important;
-
-    width: 34px !important;
-    min-width: 34px !important;
-    max-width: 34px !important;
-
-    height: 34px !important;
-    min-height: 34px !important;
-    max-height: 34px !important;
-
-    margin: 0.65rem 0.75rem !important;
-    padding: 0 !important;
-
-    background-color: #808080 !important;
-    background-image: none !important;
-
-    border: 0 !important;
-    border-radius: 6px !important;
-    box-shadow: none !important;
-
-    color: #fff !important;
-    font: inherit;
-    line-height: 1 !important;
-
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-
-    transition:
-      background-color 0.2s ease,
-      transform 0.2s ease;
-  }
-
-
-  .mobile-nav-toggle:hover {
-    background-color: #666 !important;
-  }
-
-
-  .mobile-nav-toggle:active {
-    transform: scale(0.96);
-  }
-
-
-  .mobile-nav-toggle:focus-visible {
-    outline: 2px solid #2a7ab9;
-    outline-offset: 2px;
-  }
-
-
-  .mobile-nav-toggle__icon {
-    display: block;
-
-    margin: 0;
-    padding: 0;
-
-    color: #fff !important;
-    font-size: 1.15rem;
-    font-weight: 400;
-    line-height: 1;
-  }
-
-
-  /* Navigation is folded by default */
-  #site-nav,
-  .left-nav {
-    display: none !important;
-
-    position: static !important;
-    float: none !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    height: auto !important;
-    max-height: calc(100vh - 60px);
-
-    margin: 0 !important;
-    padding: 0.25rem 0.75rem 1rem !important;
-
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-
-    background: var(--global-bg-color) !important;
-  }
-
-
-  /* Show navigation when the button is opened */
-  .masthead.mobile-nav-open #site-nav,
-  .masthead.mobile-nav-open .left-nav {
-    display: block !important;
-  }
-
-
-  /* Navigation list */
-  .left-nav__list {
-    display: block !important;
-
-    width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    list-style: none !important;
-  }
-
-
-  /* Main navigation rows */
-  .left-nav__item,
-  .left-nav__item--section,
-  .left-nav__item--title {
-    display: block !important;
-    width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-
-  /* Site title */
-  .left-nav__item--title {
-    margin-bottom: 0.4rem !important;
-  }
-
-
-  .left-nav__item--title > a {
-    display: block !important;
-    width: 100% !important;
-
-    padding: 0.6rem 0 !important;
-  }
-
-
-  /* Divider beneath site title */
-  .left-nav__divider {
-    display: block !important;
-
-    width: 100% !important;
-    height: 0 !important;
-
-    margin: 0.35rem 0 0.65rem !important;
-
-    border: 0 !important;
-    border-top: 2px solid #1f4e79 !important;
-  }
-
-
-  /* Main links */
-  .left-nav__item:not(.left-nav__item--title) > a,
-  .left-nav__section-title {
-    display: block !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0.55rem 0.75rem !important;
-
-    box-sizing: border-box !important;
-
-    border-left: 2px solid transparent;
-  }
-
-
-  /* Research submenu */
-  .left-nav__sublist {
-    display: block !important;
-
-    width: 100% !important;
-
-    margin: 0 0 0.4rem !important;
-    padding: 0 0 0 1rem !important;
-
-    list-style: none !important;
-  }
-
-
-  .left-nav__subitem {
-    display: block !important;
-    width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-
-  .left-nav__subitem > a,
-  .left-nav__subitem > a.active,
-  .left-nav__subitem > a:hover {
-    display: block !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    padding: 0.45rem 0.75rem !important;
-
-    box-sizing: border-box !important;
-  }
-
-
-  /* Prevent page content from hiding behind the closed top bar */
-  body {
-    padding-top: 58px !important;
-  }
-
-
-  .initial-content {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-
-  #main {
-    margin-top: 0 !important;
-  }
-}
-
-
-/* Desktop navigation remains unchanged */
-@media screen and (min-width: 1200px) {
-
-  .mobile-nav-toggle {
-    display: none !important;
-  }
-
-  #site-nav,
-  .left-nav {
-    display: block !important;
-  }
+#publications {
+  margin-top: 2rem !important;
+  padding-top: 1rem !important;
 }
