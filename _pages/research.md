@@ -119,13 +119,6 @@ This project develops a national framework to assess the necessity and spatial f
    rel="noopener">https://doi.org/10.1016/j.jatrs.2025.100090</a>
 </p>
 
-<p class="research-entry">
-Wang, S., Dou, Z., <strong>Liu, J.</strong>, &amp; Gao, Y. (2025). The fate of Akron-Canton Regional Airport following the dehubbing of Cleveland Hopkins International Airport and exodus of Southwest Airlines. <em>Case Studies on Transport Policy</em>.
-<a href="https://doi.org/10.1016/j.cstp.2025.101497"
-   target="_blank"
-   rel="noopener">https://doi.org/10.1016/j.cstp.2025.101497</a>
-</p>
-
 
 <p class="research-entry">
 Gao, Y., Dou, Z., Wang, S., &amp; <strong>Liu, J.</strong> (2026). Factors associated with discrepancies between scheduled and actual flight block times: evidence from U.S. domestic airline operations. <em>Transportation Research Part A: Policy and Practice</em>.
@@ -141,6 +134,15 @@ Gao, Y., Dou, Z., Wang, S., &amp; <strong>Liu, J.</strong> (2026). What Causes t
    target="_blank"
    rel="noopener">http://dx.doi.org/10.2139/ssrn.6482034</a>
 </p>
+
+
+<p class="research-entry">
+Wang, S., Dou, Z., <strong>Liu, J.</strong>, &amp; Gao, Y. (2025). The fate of Akron-Canton Regional Airport following the dehubbing of Cleveland Hopkins International Airport and exodus of Southwest Airlines. <em>Case Studies on Transport Policy</em>.
+<a href="https://doi.org/10.1016/j.cstp.2025.101497"
+   target="_blank"
+   rel="noopener">https://doi.org/10.1016/j.cstp.2025.101497</a>
+</p>
+
 
 
 <h3>Traveler Behavior</h3>
