@@ -120,6 +120,10 @@ Beyond research, I serve as the Graduate Course Instructor for AT 102 - Aviation
   <div class="cv-row">
     - Reliability Engineering & System Safety (RESS)
   </div>
+  
+  <div class="cv-row">
+  Transportation Research Board (TRB) Annual Meeting
+  </div>
 
   <div style="height: 1.2rem;"></div>
 
