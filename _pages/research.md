@@ -106,23 +106,15 @@ This project develops a national framework to assess the necessity and spatial f
 </p>
 
 <p class="research-entry">
-<strong>Liu, J.</strong>, &amp; Gao, Y. (Under Revision). Mapping Expansion Potential: A Spatial Survey and Land Categorization Analysis for U.S. Airports.
+<strong>Liu, J.</strong>, &amp; Gao, Y. (Under Review). Mapping Expansion Potential: A Spatial Survey and Land Categorization Analysis for U.S. Airports.
 </p>
 
 
 <h3>Transportation Systems</h3>
 
 <p class="research-entry">
-<strong>Liu, J.</strong>, Wang, S., Dou, Z., &amp; Gao, Y. (2025). Do Aging Aircraft Run Late? Evidence from the United States Domestic Flights. <em>Journal of the Air Transport Research Society</em>.
-<a href="https://doi.org/10.1016/j.jatrs.2025.100090"
-   target="_blank"
-   rel="noopener">https://doi.org/10.1016/j.jatrs.2025.100090</a>
-</p>
-
-
-<p class="research-entry">
 Gao, Y., Dou, Z., Wang, S., &amp; <strong>Liu, J.</strong> (2026). Factors associated with discrepancies between scheduled and actual flight block times: evidence from U.S. domestic airline operations. <em>Transportation Research Part A: Policy and Practice</em>.
-<a href="https://doi.org/10.1016/j.cstp.2025.101497"
+<a href="https://doi.org/10.1016/j.tra.2026.105227"
    target="_blank"
    rel="noopener">https://doi.org/10.1016/j.tra.2026.105227</a>
 </p>
@@ -130,9 +122,17 @@ Gao, Y., Dou, Z., Wang, S., &amp; <strong>Liu, J.</strong> (2026). Factors assoc
 
 <p class="research-entry">
 Gao, Y., Dou, Z., Wang, S., &amp; <strong>Liu, J.</strong> (2026). What Causes the Discrepancies Between Scheduled and Actual Flight Block Times? Evidence from US Domestic Airline Operations. <em>Evidence from US Domestic Airline Operations</em>.
-<a href="https://doi.org/10.1016/j.cstp.2025.101497"
+<a href="http://dx.doi.org/10.2139/ssrn.6482034"
    target="_blank"
    rel="noopener">http://dx.doi.org/10.2139/ssrn.6482034</a>
+</p>
+
+
+<p class="research-entry">
+<strong>Liu, J.</strong>, Wang, S., Dou, Z., &amp; Gao, Y. (2025). Do Aging Aircraft Run Late? Evidence from the United States Domestic Flights. <em>Journal of the Air Transport Research Society</em>.
+<a href="https://doi.org/10.1016/j.jatrs.2025.100090"
+   target="_blank"
+   rel="noopener">https://doi.org/10.1016/j.jatrs.2025.100090</a>
 </p>
 
 
@@ -148,18 +148,20 @@ Wang, S., Dou, Z., <strong>Liu, J.</strong>, &amp; Gao, Y. (2025). The fate of A
 <h3>Traveler Behavior</h3>
 
 <p class="research-entry">
+Gao, Y., &amp; <strong>Liu, J.</strong> (2026). Frequent flyer programs in academic research: A literature review of research progress since 2000. <em>Journal of Air Transport Management</em>.
+<a href="https://doi.org/10.1016/j.jairtraman.2025.102920"
+   target="_blank"
+   rel="noopener">https://doi.org/10.1016/j.jairtraman.2025.102920</a>
+</p>
+
+
+<p class="research-entry">
 <strong>Liu, J.</strong>, Beck, C. S., &amp; Gao, Y. (2024). Can you judge a book by its cover? An analysis of travelers’ perceptions of airline logos and airlines’ business models. <em>Journal of Air Transport Management, 115</em>, 102543.
 <a href="https://doi.org/10.1016/j.jairtraman.2024.102543"
    target="_blank"
    rel="noopener">https://doi.org/10.1016/j.jairtraman.2024.102543</a>
 </p>
 
-<p class="research-entry">
-Gao, Y., &amp; <strong>Liu, J.</strong> (2026). Frequent flyer programs in academic research: A literature review of research progress since 2000. <em>Journal of Air Transport Management</em>.
-<a href="https://doi.org/10.1016/j.jairtraman.2025.102920"
-   target="_blank"
-   rel="noopener">https://doi.org/10.1016/j.jairtraman.2025.102920</a>
-</p>
 
 <p class="research-entry">
 Gao, Y., &amp; <strong>Liu, J.</strong> (2023). <em>State of Airport Loyalty Programs</em> (ACRP Synthesis 131). Washington, DC: The National Academies Press.
