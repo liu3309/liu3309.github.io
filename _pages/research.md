@@ -148,18 +148,17 @@ Wang, S., Dou, Z., <strong>Liu, J.</strong>, &amp; Gao, Y. (2025). The fate of A
 <h3>Traveler Behavior</h3>
 
 <p class="research-entry">
-Gao, Y., &amp; <strong>Liu, J.</strong> (2026). Frequent flyer programs in academic research: A literature review of research progress since 2000. <em>Journal of Air Transport Management</em>.
-<a href="https://doi.org/10.1016/j.jairtraman.2025.102920"
-   target="_blank"
-   rel="noopener">https://doi.org/10.1016/j.jairtraman.2025.102920</a>
-</p>
-
-
-<p class="research-entry">
 <strong>Liu, J.</strong>, Beck, C. S., &amp; Gao, Y. (2024). Can you judge a book by its cover? An analysis of travelers’ perceptions of airline logos and airlines’ business models. <em>Journal of Air Transport Management, 115</em>, 102543.
 <a href="https://doi.org/10.1016/j.jairtraman.2024.102543"
    target="_blank"
    rel="noopener">https://doi.org/10.1016/j.jairtraman.2024.102543</a>
+</p>
+
+<p class="research-entry">
+Gao, Y., &amp; <strong>Liu, J.</strong> (2026). Frequent flyer programs in academic research: A literature review of research progress since 2000. <em>Journal of Air Transport Management</em>.
+<a href="https://doi.org/10.1016/j.jairtraman.2025.102920"
+   target="_blank"
+   rel="noopener">https://doi.org/10.1016/j.jairtraman.2025.102920</a>
 </p>
 
 
