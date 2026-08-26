@@ -121,18 +121,18 @@ Gao, Y., Dou, Z., Wang, S., &amp; <strong>Liu, J.</strong> (2026). Factors assoc
 
 
 <p class="research-entry">
-Gao, Y., Dou, Z., Wang, S., &amp; <strong>Liu, J.</strong> (2026). What Causes the Discrepancies Between Scheduled and Actual Flight Block Times? Evidence from US Domestic Airline Operations. <em>Evidence from US Domestic Airline Operations</em>.
-<a href="http://dx.doi.org/10.2139/ssrn.6482034"
-   target="_blank"
-   rel="noopener">http://dx.doi.org/10.2139/ssrn.6482034</a>
-</p>
-
-
-<p class="research-entry">
 <strong>Liu, J.</strong>, Wang, S., Dou, Z., &amp; Gao, Y. (2025). Do Aging Aircraft Run Late? Evidence from the United States Domestic Flights. <em>Journal of the Air Transport Research Society</em>.
 <a href="https://doi.org/10.1016/j.jatrs.2025.100090"
    target="_blank"
    rel="noopener">https://doi.org/10.1016/j.jatrs.2025.100090</a>
+</p>
+
+
+<p class="research-entry">
+Gao, Y., Dou, Z., Wang, S., &amp; <strong>Liu, J.</strong> (2026). What Causes the Discrepancies Between Scheduled and Actual Flight Block Times? Evidence from US Domestic Airline Operations. <em>Evidence from US Domestic Airline Operations</em>.
+<a href="http://dx.doi.org/10.2139/ssrn.6482034"
+   target="_blank"
+   rel="noopener">http://dx.doi.org/10.2139/ssrn.6482034</a>
 </p>
 
 
