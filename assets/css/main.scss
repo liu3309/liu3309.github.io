@@ -2191,29 +2191,34 @@ h2#conference-activities::after,
 
 
 /* =========================================================
-   FINAL: TRANSPARENT MOBILE/TABLET DROPDOWN
+   MOBILE / TABLET NAV — SOFT TRANSLUCENT BACKGROUND
    ========================================================= */
 
 @media screen and (max-width: 1199px) {
 
-  .masthead.mobile-nav-open,
+  .masthead.mobile-nav-open {
+    /* Same #fafaf8 background, slightly transparent */
+    background: rgba(250, 250, 248, 0.90) !important;
+
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+
+    border-bottom: 1px solid var(--global-border-color) !important;
+    box-shadow: none !important;
+  }
+
+  /* Keep inner layers clear so opacity does not stack */
   .masthead.mobile-nav-open .masthead__inner-wrap,
   .masthead.mobile-nav-open .masthead__menu,
   .masthead.mobile-nav-open #site-nav,
   .masthead.mobile-nav-open .greedy-nav,
-  .masthead.mobile-nav-open .left-nav {
-    background: rgba(250, 250, 248, 0.96) !important;
-
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-
-    box-shadow: none !important;
-  }
-
+  .masthead.mobile-nav-open .left-nav,
   .masthead.mobile-nav-open .left-nav__list,
   .masthead.mobile-nav-open .left-nav__sublist,
   .masthead.mobile-nav-open .left-nav__item,
   .masthead.mobile-nav-open .left-nav__subitem {
     background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
   }
 }
