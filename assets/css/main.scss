@@ -2196,43 +2196,24 @@ h2#conference-activities::after,
 
 @media screen and (max-width: 1199px) {
 
-  /* Remove background from every navigation wrapper when open */
   .masthead.mobile-nav-open,
   .masthead.mobile-nav-open .masthead__inner-wrap,
   .masthead.mobile-nav-open .masthead__menu,
   .masthead.mobile-nav-open #site-nav,
   .masthead.mobile-nav-open .greedy-nav,
-  .masthead.mobile-nav-open .left-nav,
+  .masthead.mobile-nav-open .left-nav {
+    background: rgba(250, 250, 248, 0.88) !important;
+
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+
+    box-shadow: none !important;
+  }
+
   .masthead.mobile-nav-open .left-nav__list,
   .masthead.mobile-nav-open .left-nav__sublist,
-  .masthead.mobile-nav-open .visible-links,
-  .masthead.mobile-nav-open .hidden-links {
+  .masthead.mobile-nav-open .left-nav__item,
+  .masthead.mobile-nav-open .left-nav__subitem {
     background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-
-    box-shadow: none !important;
-  }
-
-  /* Remove possible theme pseudo-element backgrounds */
-  .masthead.mobile-nav-open::before,
-  .masthead.mobile-nav-open::after,
-  .masthead.mobile-nav-open .masthead__inner-wrap::before,
-  .masthead.mobile-nav-open .masthead__inner-wrap::after,
-  .masthead.mobile-nav-open .masthead__menu::before,
-  .masthead.mobile-nav-open .masthead__menu::after,
-  .masthead.mobile-nav-open #site-nav::before,
-  .masthead.mobile-nav-open #site-nav::after {
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    box-shadow: none !important;
-  }
-
-  /* Remove dropdown borders */
-  .masthead.mobile-nav-open #site-nav,
-  .masthead.mobile-nav-open .left-nav,
-  .masthead.mobile-nav-open .masthead__menu {
-    border: 0 !important;
   }
 }
