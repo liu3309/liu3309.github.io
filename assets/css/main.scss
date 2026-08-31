@@ -2188,3 +2188,46 @@ h2#conference-activities::after,
     display: block !important;
   }
 }
+
+
+/* =========================================================
+   Transparent dropdown menu — FINAL OVERRIDE
+   ========================================================= */
+
+@media screen and (max-width: 1199px) {
+
+  /* When menu is open, remove the masthead's white background */
+  .masthead.mobile-nav-open {
+    background: transparent !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    border-bottom: 0 !important;
+  }
+
+  /* Dropdown itself */
+  .masthead.mobile-nav-open #site-nav,
+  .masthead.mobile-nav-open .left-nav {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Make all containers inside menu transparent too */
+  .masthead.mobile-nav-open .left-nav__list,
+  .masthead.mobile-nav-open .left-nav__sublist,
+  .masthead.mobile-nav-open .left-nav__item,
+  .masthead.mobile-nav-open .left-nav__subitem {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+}
