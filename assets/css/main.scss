@@ -2222,3 +2222,30 @@ h2#conference-activities::after,
     box-shadow: none !important;
   }
 }
+
+
+
+
+/* Dropdown navigation divider */
+.left-nav__divider,
+.left-nav hr,
+.masthead hr,
+.sidebar hr {
+  border: 0 !important;
+  border-top: 2px solid #163a5c !important;
+  opacity: 1 !important;
+}
+
+
+/* Main page section divider */
+.page__content h2:not(.about-profile__name),
+.about-profile__bio h2 {
+  border-bottom: 1px solid #aeb8c4 !important;
+}
+
+
+/* Blue accent line under section headings */
+.page__content h2:not(.about-profile__name)::after,
+.about-profile__bio h2::after {
+  background: #1f5f91 !important;
+}
