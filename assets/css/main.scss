@@ -91,7 +91,7 @@
     margin: 0 !important;
     padding: 0 !important;
 
-    background: var(--global-bg-color) !important;
+    background: transparent !important;
     border-right: 2.5px solid var(--global-border-color) !important;
     border-bottom: 0 !important;
 
@@ -743,7 +743,7 @@ body {
     margin: 0 !important;
     padding: 0 !important;
 
-    background: var(--global-bg-color) !important;
+    background: transparent !important;
 
     border-right: 2.5px solid var(--global-border-color) !important;
     border-bottom: 0 !important;
@@ -2191,41 +2191,48 @@ h2#conference-activities::after,
 
 
 /* =========================================================
-   Transparent dropdown menu — FINAL OVERRIDE
+   FINAL: TRANSPARENT MOBILE/TABLET DROPDOWN
    ========================================================= */
 
 @media screen and (max-width: 1199px) {
 
-  /* When menu is open, remove the masthead's white background */
-  .masthead.mobile-nav-open {
-    background: transparent !important;
-
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-
-    border-bottom: 0 !important;
-  }
-
-  /* Dropdown itself */
+  /* Remove background from every navigation wrapper when open */
+  .masthead.mobile-nav-open,
+  .masthead.mobile-nav-open .masthead__inner-wrap,
+  .masthead.mobile-nav-open .masthead__menu,
   .masthead.mobile-nav-open #site-nav,
-.masthead.mobile-nav-open .left-nav {
-  background: rgba(250, 250, 248, 0.55) !important;
-
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-  /* Make all containers inside menu transparent too */
+  .masthead.mobile-nav-open .greedy-nav,
+  .masthead.mobile-nav-open .left-nav,
   .masthead.mobile-nav-open .left-nav__list,
   .masthead.mobile-nav-open .left-nav__sublist,
-  .masthead.mobile-nav-open .left-nav__item,
-  .masthead.mobile-nav-open .left-nav__subitem {
+  .masthead.mobile-nav-open .visible-links,
+  .masthead.mobile-nav-open .hidden-links {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    box-shadow: none !important;
+  }
+
+  /* Remove possible theme pseudo-element backgrounds */
+  .masthead.mobile-nav-open::before,
+  .masthead.mobile-nav-open::after,
+  .masthead.mobile-nav-open .masthead__inner-wrap::before,
+  .masthead.mobile-nav-open .masthead__inner-wrap::after,
+  .masthead.mobile-nav-open .masthead__menu::before,
+  .masthead.mobile-nav-open .masthead__menu::after,
+  .masthead.mobile-nav-open #site-nav::before,
+  .masthead.mobile-nav-open #site-nav::after {
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
     box-shadow: none !important;
+  }
+
+  /* Remove dropdown borders */
+  .masthead.mobile-nav-open #site-nav,
+  .masthead.mobile-nav-open .left-nav,
+  .masthead.mobile-nav-open .masthead__menu {
+    border: 0 !important;
   }
 }
