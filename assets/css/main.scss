@@ -2222,3 +2222,19 @@ h2#conference-activities::after,
     box-shadow: none !important;
   }
 }
+
+
+@media screen and (min-width: 1200px) {
+
+  .masthead {
+    background: #f3f4f2 !important;
+    border-right: 1.5px solid #c7cdd3 !important;
+  }
+
+  .masthead__inner-wrap,
+  .left-nav,
+  .left-nav__list,
+  .left-nav__sublist {
+    background: transparent !important;
+  }
+}
