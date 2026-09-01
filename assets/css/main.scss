@@ -2269,3 +2269,19 @@ h2#conference-activities::after,
     background-color: transparent !important;
   }
 }
+
+@media screen and (max-width: 1199px) {
+
+  html {
+    background: #f3f4f2 !important;
+  }
+
+  body {
+    margin: 0 !important;
+  }
+
+  .masthead {
+    background: rgba(243, 244, 242, 0.96) !important;
+  }
+}
+
